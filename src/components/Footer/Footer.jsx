@@ -16,14 +16,14 @@ import { orgData } from "../../assets/data";
 
 export default function Footer() {
   return (
-    <footer className="mt-auto bg-grayscale-darkest text-grayscale-lightest py-12">
+    <footer className="mt-auto bg-primary-dark-bkgrnd text-primary-light-text py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold mb-4 text-grayscale-lightest">
+            <h3 className="text-xl font-bold mb-4 text-primary-light-text">
               {orgData.name}
             </h3>
-            <p className="text-sm leading-relaxed text-grayscale-lightest">
+            <p className="text-sm leading-relaxed text-secondary-light-text">
               {orgData.description}
             </p>
             <div className="flex space-x-4">
@@ -31,101 +31,81 @@ export default function Footer() {
                 to={orgData.socials.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-grayscale-lighter hover:text-accent transition-colors"
+                className="text-secondary-light-text hover:text-buttons-blue transition-colors"
               >
-                <FontAwesomeIcon
-                  icon={faFacebookF}
-                  size="lg"
-                  style={{ filter: "invert(100%)" }}
-                />
+                <FontAwesomeIcon icon={faFacebookF} size="lg" className="invert" />
                 <span className="sr-only">Facebook</span>
               </Link>
               <Link
                 to={orgData.socials.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-grayscale-lighter hover:text-accent transition-colors"
+                className="text-secondary-light-text hover:text-buttons-blue transition-colors"
               >
-                <FontAwesomeIcon
-                  icon={faTwitter}
-                  size="lg"
-                  style={{ filter: "invert(100%)" }}
-                />
+                <FontAwesomeIcon icon={faTwitter} size="lg" className="invert" />
                 <span className="sr-only">Twitter</span>
               </Link>
               <Link
                 to={orgData.socials.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-grayscale-lighter hover:text-accent transition-colors"
+                className="text-secondary-light-text hover:text-buttons-blue transition-colors"
               >
-                <FontAwesomeIcon
-                  icon={faInstagram}
-                  size="lg"
-                  style={{ filter: "invert(100%)" }}
-                />
+                <FontAwesomeIcon icon={faInstagram} size="lg" className="invert" />
                 <span className="sr-only">Instagram</span>
               </Link>
               <Link
                 to={orgData.socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-grayscale-lighter hover:text-accent transition-colors"
+                className="text-secondary-light-text hover:text-buttons-blue transition-colors"
               >
-                <FontAwesomeIcon
-                  icon={faLinkedinIn}
-                  size="lg"
-                  style={{ filter: "invert(100%)" }}
-                />
+                <FontAwesomeIcon icon={faLinkedinIn} size="lg" className="invert" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
             </div>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-grayscale-lightest">
+            <h3 className="text-lg font-semibold mb-4 text-primary-light-text">
               Contact Us
             </h3>
-            <ul className="space-y-2 text-sm text-grayscale-lighter">
-              <li className="flex items-center text-grayscale-lighter">
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-center text-secondary-light-text">
                 <FontAwesomeIcon
                   icon={faMapMarkerAlt}
-                  className="h-5 w-5 mr-2 text-accent"
-                  style={{ filter: "invert(100%)" }}
+                  className="h-5 w-5 mr-2 text-buttons-blue invert"
                 />
                 {orgData.address}
               </li>
-              <li className="flex items-center text-grayscale-lighter">
+              <li className="flex items-center text-secondary-light-text">
                 <FontAwesomeIcon
                   icon={faPhone}
-                  className="h-5 w-5 mr-2 text-accent"
-                  style={{ filter: "invert(100%)" }}
+                  className="h-5 w-5 mr-2 text-buttons-blue invert"
                 />
                 {orgData.phone}
               </li>
-              <li className="flex items-center text-grayscale-lighter">
+              <li className="flex items-center text-secondary-light-text">
                 <FontAwesomeIcon
                   icon={faEnvelope}
-                  className="h-5 w-5 mr-2 text-accent"
-                  style={{ filter: "invert(100%)" }}
+                  className="h-5 w-5 mr-2 text-buttons-blue invert"
                 />
                 {orgData.email}
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-grayscale-lightest">
+            <h3 className="text-lg font-semibold mb-4 text-primary-light-text">
               Quick Links
             </h3>
-            <ul className="space-y-2 text-sm text-grayscale-lighter">
+            <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   to="/about"
-                  className="text-grayscale-lighter hover:text-accent transition-colors flex items-center"
+                  className="text-secondary-light-text hover:text-buttons-blue transition-colors flex items-center"
                 >
                   <FontAwesomeIcon
                     icon={faChevronRight}
-                    className="h-4 w-4 mr-2"
-                    style={{ filter: "invert(100%)" }}
+                    className="h-4 w-4 mr-2 invert"
                   />
                   About Us
                 </Link>
@@ -133,12 +113,11 @@ export default function Footer() {
               <li>
                 <Link
                   to="/services"
-                  className="text-grayscale-lighter hover:text-accent transition-colors flex items-center"
+                  className="text-secondary-light-text hover:text-buttons-blue transition-colors flex items-center"
                 >
                   <FontAwesomeIcon
                     icon={faChevronRight}
-                    className="h-4 w-4 mr-2"
-                    style={{ filter: "invert(100%)" }}
+                    className="h-4 w-4 mr-2 invert"
                   />
                   Our Services
                 </Link>
@@ -146,12 +125,11 @@ export default function Footer() {
               <li>
                 <Link
                   to="/doctors"
-                  className="text-grayscale-lighter hover:text-accent transition-colors flex items-center"
+                  className="text-secondary-light-text hover:text-buttons-blue transition-colors flex items-center"
                 >
                   <FontAwesomeIcon
                     icon={faChevronRight}
-                    className="h-4 w-4 mr-2"
-                    style={{ filter: "invert(100%)" }}
+                    className="h-4 w-4 mr-2 invert"
                   />
                   Our Doctors
                 </Link>
@@ -159,12 +137,11 @@ export default function Footer() {
               <li>
                 <Link
                   to="/appointments"
-                  className="text-grayscale-lighter hover:text-accent transition-colors flex items-center"
+                  className="text-secondary-light-text hover:text-buttons-blue transition-colors flex items-center"
                 >
                   <FontAwesomeIcon
                     icon={faChevronRight}
-                    className="h-4 w-4 mr-2"
-                    style={{ filter: "invert(100%)" }}
+                    className="h-4 w-4 mr-2 invert"
                   />
                   Book Appointment
                 </Link>
@@ -172,19 +149,18 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-grayscale-lightest">
+            <h3 className="text-lg font-semibold mb-4 text-primary-light-text">
               Legal
             </h3>
-            <ul className="space-y-2 text-sm text-grayscale-lighter">
+            <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   to="/terms"
-                  className="text-grayscale-lighter hover:text-accent transition-colors flex items-center"
+                  className="text-secondary-light-text hover:text-buttons-blue transition-colors flex items-center"
                 >
                   <FontAwesomeIcon
                     icon={faChevronRight}
-                    className="h-4 w-4 mr-2"
-                    style={{ filter: "invert(100%)" }}
+                    className="h-4 w-4 mr-2 invert"
                   />
                   Terms and Conditions
                 </Link>
@@ -192,12 +168,11 @@ export default function Footer() {
               <li>
                 <Link
                   to="/privacy"
-                  className="text-grayscale-lighter hover:text-accent transition-colors flex items-center"
+                  className="text-secondary-light-text hover:text-buttons-blue transition-colors flex items-center"
                 >
                   <FontAwesomeIcon
                     icon={faChevronRight}
-                    className="h-4 w-4 mr-2"
-                    style={{ filter: "invert(100%)" }}
+                    className="h-4 w-4 mr-2 invert"
                   />
                   Privacy Policy
                 </Link>
@@ -205,12 +180,11 @@ export default function Footer() {
               <li>
                 <Link
                   to="/accessibility"
-                  className="text-grayscale-lighter hover:text-accent transition-colors flex items-center"
+                  className="text-secondary-light-text hover:text-buttons-blue transition-colors flex items-center"
                 >
                   <FontAwesomeIcon
                     icon={faChevronRight}
-                    className="h-4 w-4 mr-2"
-                    style={{ filter: "invert(100%)" }}
+                    className="h-4 w-4 mr-2 invert"
                   />
                   Accessibility
                 </Link>
@@ -218,10 +192,9 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t border-grayscale-darker text-center text-sm text-grayscale-lightest">
-          <p>
-            &copy; {new Date().getFullYear()} Clinic Center. All rights
-            reserved.
+        <div className="mt-12 pt-8 border-t border-secondary-dark-bkgrnd text-center text-sm">
+          <p className="text-primary-light-text text-lg">
+            &copy; {new Date().getFullYear()} {orgData.name}. All rights reserved.
           </p>
         </div>
       </div>

@@ -36,23 +36,23 @@ export default function TermsAndConditions() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-primary-light-bkgrnd to-secondary-light-bkgrnd py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-extrabold text-blue-800 mb-8 text-center">Terms and Conditions</h1>
-        <p className="text-gray-600 mb-8 text-center">
+        <h1 className="text-4xl font-extrabold text-primary-dark-text mb-8 text-center">Terms and Conditions</h1>
+        <p className="text-secondary-dark-text mb-8 text-center">
           Welcome to {orgData.name}. Please read these terms and conditions carefully before using our services.
         </p>
         <div className="space-y-6">
           {sections.map((section, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div key={index} className="bg-tertiary-light-bkgrnd rounded-lg shadow-md overflow-hidden">
               <button
                 onClick={() => setActiveSection(activeSection === index ? null : index)}
                 className="w-full text-left px-6 py-4 focus:outline-none"
               >
                 <div className="flex justify-between items-center">
-                  <h2 className="text-xl font-semibold text-blue-700">{section.title}</h2>
+                  <h2 className="text-xl font-semibold text-primary-dark-text">{section.title}</h2>
                   <svg
-                    className={`w-6 h-6 text-blue-500 transform transition-transform duration-200 ${
+                    className={`w-6 h-6 text-buttons-blue transform transition-transform duration-200 ${
                       activeSection === index ? 'rotate-180' : ''
                     }`}
                     fill="none"
@@ -65,7 +65,7 @@ export default function TermsAndConditions() {
               </button>
               {activeSection === index && (
                 <div className="px-6 pb-4">
-                  <p className="text-gray-600">{section.content}</p>
+                  <p className="text-secondary-dark-text">{section.content}</p>
                 </div>
               )}
             </div>

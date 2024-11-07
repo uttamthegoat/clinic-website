@@ -17,10 +17,10 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-grayscale-darkest text-grayscale-lightest py-4 px-6 shadow-md">
+    <nav className="bg-primary-dark-bkgrnd text-primary-light-text py-4 px-6 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         {/* Brand Logo */}
-        <Link to="/" className="text-2xl font-bold text-grayscale-lightest">
+        <Link to="/" className="text-2xl font-bold text-primary-light-text">
           <img src={orgData.logo} alt="logo" className="w-auto h-14 md:h-20" />
         </Link>
 
@@ -28,58 +28,56 @@ export default function Navbar() {
         <div className="hidden md:flex md:space-x-4 lg:space-x-12 mx-4">
           <Link
             to="/about"
-            className="text-grayscale-lightest hover:text-grayscale-light transition-colors text-xl"
+            className="text-primary-light-text hover:text-secondary-light-text transition-colors text-xl"
           >
             About
           </Link>
           <Link
             to="/services"
-            className="text-grayscale-lightest hover:text-grayscale-light transition-colors text-xl"
+            className="text-primary-light-text hover:text-secondary-light-text transition-colors text-xl"
           >
             Services
           </Link>
           <Link
             to="/reviews"
-            className="text-grayscale-lightest hover:text-grayscale-light transition-colors text-xl"
+            className="text-primary-light-text hover:text-secondary-light-text transition-colors text-xl"
           >
             Reviews
           </Link>
           <Link
             to="/contact"
-            className="text-grayscale-lightest hover:text-grayscale-light transition-colors text-xl"
+            className="text-primary-light-text hover:text-secondary-light-text transition-colors text-xl"
           >
             Contact
           </Link>
           <Link
             to="/resources"
-            className="text-grayscale-lightest hover:text-grayscale-light transition-colors text-xl"
+            className="text-primary-light-text hover:text-secondary-light-text transition-colors text-xl"
           >
             Resources
           </Link>
         </div>
 
         {/* Phone Number and Book Now Button */}
-        <div className="hidden md:flex items-center space-x-4 ">
+        <div className="hidden md:flex items-center space-x-4">
           <a
             href={`tel:${orgData.phone}`}
-            className="flex items-center bg-transparent hover:bg-grayscale-dark text-grayscale-lightest font-semibold hover:text-grayscale-lightest py-2 px-4 border border-grayscale-dark hover:border-transparent rounded transition-all"
+            className="flex items-center bg-transparent hover:bg-secondary-dark-bkgrnd text-primary-light-text font-semibold hover:text-primary-light-text py-2 px-4 border border-secondary-dark-bkgrnd hover:border-transparent rounded transition-all"
           >
             <FontAwesomeIcon
               icon={faPhone}
-              className="mr-2 hover:text-grayscale-light"
-              style={{ filter: "invert(100%)" }}
+              className="mr-2 hover:text-secondary-light-text invert"
             />
-
-            <span className="hidden lg:block  text-grayscale-lightest hover:text-grayscale-light transition-colors">
+            <span className="hidden lg:block text-primary-light-text hover:text-secondary-light-text transition-colors">
               {orgData.phone}
             </span>
-            <span className="block lg:hidden  text-grayscale-lightest hover:text-grayscale-light transition-colors">
+            <span className="block lg:hidden text-primary-light-text hover:text-secondary-light-text transition-colors">
               Call Us
             </span>
           </a>
           <Link
             to="/book"
-            className="bg-transparent hover:bg-grayscale-dark text-grayscale-lightest font-semibold hover:text-grayscale-lightest py-2 px-4 border border-grayscale-dark hover:border-transparent rounded transition-all"
+            className="bg-transparent hover:bg-secondary-dark-bkgrnd text-primary-light-text font-semibold hover:text-primary-light-text py-2 px-4 border border-secondary-dark-bkgrnd hover:border-transparent rounded transition-all"
           >
             Book Now
           </Link>
@@ -89,64 +87,71 @@ export default function Navbar() {
         <div className="md:hidden flex items-center space-x-2">
           <a
             href={`tel:${orgData.phone}`}
-            className="text-grayscale-lightest hover:text-grayscale-light transition-colors p-2"
+            className="text-primary-light-text hover:text-secondary-light-text transition-colors p-2"
           >
-            <FontAwesomeIcon icon={faMobilePhone} size="lg" style={{ filter: "invert(100%)" }} />
+            <FontAwesomeIcon icon={faMobilePhone} size="lg" className="invert" />
             <span className="sr-only">Call us</span>
           </a>
           <button
             onClick={toggleMenu}
-            className="text-grayscale-lightest hover:text-grayscale-light transition-colors p-2"
+            className="text-primary-light-text hover:text-secondary-light-text transition-colors p-2"
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
-            <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} size="lg" style={{ filter: "invert(100%)" }}/>
+            <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} size="lg" className="invert" />
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden mt-4 space-y-4 absolute left-0 right-0 bg-grayscale-darkest px-6 py-4 shadow-md">
+        <div className="md:hidden mt-4 space-y-4 absolute left-0 right-0 bg-primary-dark-bkgrnd px-6 py-4 shadow-md z-10">
           <Link
             to="/about"
-            className="block text-grayscale-lightest hover:text-grayscale-light transition-colors"
+            className="block text-primary-light-text hover:text-secondary-light-text transition-colors"
+            onClick={() => setIsMenuOpen(false)}
           >
             About
           </Link>
           <Link
             to="/services"
-            className="block text-grayscale-lightest hover:text-grayscale-light transition-colors"
+            className="block text-primary-light-text hover:text-secondary-light-text transition-colors"
+            onClick={() => setIsMenuOpen(false)}
           >
             Services
           </Link>
           <Link
             to="/reviews"
-            className="block text-grayscale-lightest hover:text-grayscale-light transition-colors"
+            className="block text-primary-light-text hover:text-secondary-light-text transition-colors"
+            onClick={() => setIsMenuOpen(false)}
           >
             Reviews
           </Link>
           <Link
             to="/contact"
-            className="block text-grayscale-lightest hover:text-grayscale-light transition-colors"
+            className="block text-primary-light-text hover:text-secondary-light-text transition-colors"
+            onClick={() => setIsMenuOpen(false)}
           >
             Contact
           </Link>
           <Link
             to="/resources"
-            className="block text-grayscale-lightest hover:text-grayscale-light transition-colors"
+            className="block text-primary-light-text hover:text-secondary-light-text transition-colors"
+            onClick={() => setIsMenuOpen(false)}
           >
             Resources
           </Link>
           <a
             href={`tel:${orgData.phone}`}
-            className="block text-grayscale-lightest hover:text-grayscale-light transition-colors"
+            className="block text-primary-light-text hover:text-secondary-light-text transition-colors"
+            onClick={() => setIsMenuOpen(false)}
           >
-            <FontAwesomeIcon icon={faPhone} className="mr-2" style={{ filter: "invert(100%)" }}/>
+            <FontAwesomeIcon icon={faPhone} className="mr-2 invert" />
             {orgData.phone}
           </a>
           <Link
             to="/book"
-            className="block bg-grayscale-light px-4 py-2 rounded transition-all duration-200 ease-in-out text-center hover:bg-transparent hover:border hover:border-grayscale-light hover:text-grayscale-lightest"
+            className="block bg-secondary-dark-bkgrnd px-4 py-2 rounded transition-all duration-200 ease-in-out text-center hover:bg-transparent hover:border hover:border-secondary-dark-bkgrnd hover:text-primary-light-text"
+            onClick={() => setIsMenuOpen(false)}
           >
             Book Now
           </Link>

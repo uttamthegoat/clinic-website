@@ -17,20 +17,24 @@ export default function ContactUs() {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log('Form submitted:', formData)
-    // Here you would typically send the form data to a server
   }
 
   return (
-    <div className="min-h-screen bg-blue-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-primary-light-bkgrnd to-secondary-light-bkgrnd py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-center text-blue-800 mb-12">Contact {orgData.name}</h1>
+        <h1 className="text-4xl font-bold text-center text-primary-dark-text mb-4">Contact {orgData.name}</h1>
+        <p className="text-center text-secondary-dark-text mb-12 max-w-2xl mx-auto">
+          We&apos;re here to help and answer any questions you might have. We look forward to hearing from you.
+        </p>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-lg shadow-lg p-6">
-            <h2 className="text-2xl font-semibold text-blue-800 mb-6">Get in Touch</h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
+          {/* Contact Form */}
+          <div className="bg-tertiary-light-bkgrnd rounded-xl shadow-lg p-8 transform hover:scale-[1.02] transition-transform duration-300">
+            <h2 className="text-2xl font-semibold text-primary-dark-text mb-6">Send Us a Message</h2>
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                  Name
+                <label htmlFor="name" className="block text-sm font-medium text-secondary-dark-text mb-2">
+                  Full Name
                 </label>
                 <input
                   type="text"
@@ -39,12 +43,13 @@ export default function ContactUs() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="w-full px-4 py-3 rounded-lg border border-tertiary-light-bkgrnd bg-primary-light-bkgrnd text-primary-dark-text placeholder-tertiary-dark-text focus:outline-none focus:ring-2 focus:ring-buttons-blue focus:border-transparent transition duration-200"
+                  placeholder="John Doe"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email
+                <label htmlFor="email" className="block text-sm font-medium text-secondary-dark-text mb-2">
+                  Email Address
                 </label>
                 <input
                   type="email"
@@ -53,12 +58,13 @@ export default function ContactUs() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="w-full px-4 py-3 rounded-lg border border-tertiary-light-bkgrnd bg-primary-light-bkgrnd text-primary-dark-text placeholder-tertiary-dark-text focus:outline-none focus:ring-2 focus:ring-buttons-blue focus:border-transparent transition duration-200"
+                  placeholder="john@example.com"
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                  Phone
+                <label htmlFor="phone" className="block text-sm font-medium text-secondary-dark-text mb-2">
+                  Phone Number
                 </label>
                 <input
                   type="tel"
@@ -66,12 +72,13 @@ export default function ContactUs() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="w-full px-4 py-3 rounded-lg border border-tertiary-light-bkgrnd bg-primary-light-bkgrnd text-primary-dark-text placeholder-tertiary-dark-text focus:outline-none focus:ring-2 focus:ring-buttons-blue focus:border-transparent transition duration-200"
+                  placeholder="(123) 456-7890"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                  Message
+                <label htmlFor="message" className="block text-sm font-medium text-secondary-dark-text mb-2">
+                  Your Message
                 </label>
                 <textarea
                   id="message"
@@ -80,48 +87,57 @@ export default function ContactUs() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="w-full px-4 py-3 rounded-lg border border-tertiary-light-bkgrnd bg-primary-light-bkgrnd text-primary-dark-text placeholder-tertiary-dark-text focus:outline-none focus:ring-2 focus:ring-buttons-blue focus:border-transparent transition duration-200 resize-none"
+                  placeholder="How can we help you?"
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150 ease-in-out"
+                className="w-full bg-buttons-blue text-primary-light-text py-3 px-6 rounded-lg hover:bg-buttons-blue-hover focus:outline-none focus:ring-2 focus:ring-buttons-blue focus:ring-offset-2 transition duration-300 ease-in-out transform hover:-translate-y-1"
               >
                 Send Message
               </button>
             </form>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6">
-            <h2 className="text-2xl font-semibold text-blue-800 mb-6">Contact Information</h2>
-            <div className="space-y-4">
-              <div className="flex items-start">
-                <MapPin className="w-6 h-6 text-blue-600 mr-3 mt-1" />
+
+          {/* Contact Information */}
+          <div className="bg-tertiary-light-bkgrnd rounded-xl shadow-lg p-8 transform hover:scale-[1.02] transition-transform duration-300">
+            <h2 className="text-2xl font-semibold text-primary-dark-text mb-8">Contact Information</h2>
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4 p-4 rounded-lg hover:bg-secondary-light-bkgrnd transition-colors duration-200">
+                <MapPin className="w-6 h-6 text-buttons-blue flex-shrink-0" />
                 <div>
-                  <h3 className="font-semibold">Address</h3>
-                  <p className="text-gray-600">{orgData.address}</p>
+                  <h3 className="font-semibold text-primary-dark-text">Our Location</h3>
+                  <p className="text-secondary-dark-text mt-1">{orgData.address}</p>
                 </div>
               </div>
-              <div className="flex items-center">
-                <Phone className="w-6 h-6 text-blue-600 mr-3" />
+              
+              <div className="flex items-start space-x-4 p-4 rounded-lg hover:bg-secondary-light-bkgrnd transition-colors duration-200">
+                <Phone className="w-6 h-6 text-buttons-green flex-shrink-0" />
                 <div>
-                  <h3 className="font-semibold">Phone</h3>
-                  <p className="text-gray-600">{orgData.phone}</p>
+                  <h3 className="font-semibold text-primary-dark-text">Phone Number</h3>
+                  <p className="text-secondary-dark-text mt-1">{orgData.phone}</p>
                 </div>
               </div>
-              <div className="flex items-center">
-                <Mail className="w-6 h-6 text-blue-600 mr-3" />
+
+              <div className="flex items-start space-x-4 p-4 rounded-lg hover:bg-secondary-light-bkgrnd transition-colors duration-200">
+                <Mail className="w-6 h-6 text-buttons-red flex-shrink-0" />
                 <div>
-                  <h3 className="font-semibold">Email</h3>
-                  <p className="text-gray-600">{orgData.email}</p>
+                  <h3 className="font-semibold text-primary-dark-text">Email Address</h3>
+                  <p className="text-secondary-dark-text mt-1">{orgData.email}</p>
                 </div>
               </div>
-              <div className="flex items-start">
-                <Clock className="w-6 h-6 text-blue-600 mr-3 mt-1" />
+
+              <div className="flex items-start space-x-4 p-4 rounded-lg hover:bg-secondary-light-bkgrnd transition-colors duration-200">
+                <Clock className="w-6 h-6 text-buttons-yellow flex-shrink-0" />
                 <div>
-                  <h3 className="font-semibold">Office Hours</h3>
-                  <ul className="text-gray-600">
+                  <h3 className="font-semibold text-primary-dark-text">Office Hours</h3>
+                  <ul className="text-secondary-dark-text mt-1 space-y-1">
                     {orgData.hours.map((hour) => (
-                      <li key={hour.day}>{hour.day}: {hour.hours}</li>
+                      <li key={hour.day} className="flex justify-between">
+                        <span className="font-medium">{hour.day}:</span>
+                        <span>{hour.hours}</span>
+                      </li>
                     ))}
                   </ul>
                 </div>

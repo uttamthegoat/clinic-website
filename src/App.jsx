@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Suspense } from "react";
 // import Footer from "./components/static/Footer";
 // import Navbar from "./components/navbar/Navbar";

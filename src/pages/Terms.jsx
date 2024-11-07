@@ -70,14 +70,6 @@ export default function TermsAndConditions() {
             </div>
           ))}
         </div>
-        <div className="mt-12 text-center">
-          <p className="text-sm text-gray-500">
-            Last updated: {new Date().toLocaleDateString()}
-          </p>
-          <p className="text-sm text-gray-500 mt-2">
-            © {new Date().getFullYear()} Jay Smiles Dentistry. All rights reserved.
-          </p>
-        </div>
       </div>
     </div>
   )

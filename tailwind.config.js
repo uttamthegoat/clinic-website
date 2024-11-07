@@ -1,34 +1,60 @@
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
         primary: {
-          text: '#0c4a6e',      // Dark blue for primary text
-          'text-light': '#075985',  // Lighter blue for primary text variations
-          bkgrnd: '#f0f9ff',    // Very light blue for primary backgrounds
-          'bkgrnd-alt': '#e0f2fe',  // Slightly darker blue for alternate backgrounds
-          accent: '#0ea5e9',    // Bright blue for primary accents/buttons
+          light: '#D3E5FF', // Light Blue
+          DEFAULT: '#3A7CA5', // Default Clinic Blue
+          dark: '#285C8B', // Darker Blue
         },
         secondary: {
-          text: '#1e293b',      // Dark slate for secondary text
-          'text-light': '#475569',  // Lighter slate for secondary text variations
-          bkgrnd: '#f8fafc',    // Very light slate for secondary backgrounds
-          'bkgrnd-alt': '#f1f5f9',  // Slightly darker slate for alternate backgrounds
-          accent: '#64748b',    // Medium slate for secondary accents
+          light: '#FFF7E0', // Light Beige
+          DEFAULT: '#F3D6A0', // Clinic Beige
+          dark: '#B3906F', // Darker Beige
         },
-        tertiary: {
-          text: '#14532d',      // Dark green for tertiary text
-          'text-light': '#166534',  // Lighter green for tertiary text variations
-          bkgrnd: '#f0fdf4',    // Very light green for tertiary backgrounds
-          'bkgrnd-alt': '#dcfce7',  // Slightly darker green for alternate backgrounds
-          accent: '#22c55e',    // Medium green for tertiary accents
-        }
-      }
+        accent: {
+          light: '#FFF3F2', // Light Coral
+          DEFAULT: '#FF7F7F', // Clinic Coral
+          dark: '#CC5C5C', // Dark Coral
+        },
+        success: {
+          light: '#E6FFEB', // Light Green
+          DEFAULT: '#52B788', // Green for success messages
+          dark: '#38855B', // Dark Green
+        },
+        warning: {
+          light: '#FFF4D1', // Light Yellow
+          DEFAULT: '#FFC700', // Yellow for warnings
+          dark: '#CC9E00', // Dark Yellow
+        },
+        neutral: {
+          light: '#F8F9FA', // Light Gray for backgrounds
+          DEFAULT: '#E1E5EA', // Neutral Gray
+          dark: '#495057', // Darker Gray for text
+        },
+        text: {
+          light: '#FFFFFF', // Light text color
+          dark: '#1F2937', // Dark text color
+        },
+        background: {
+          light: '#F0F4F8', // Light background color
+          dark: '#1A202C', // Dark background color
+        },
+        // Grayscale theme
+        grayscale: {
+          black: '#000000',
+          darkest: '#1A1A1A',
+          darker: '#333333',
+          dark: '#4D4D4D',
+          DEFAULT: '#808080', // Mid Gray
+          light: '#B3B3B3',
+          lighter: '#D9D9D9',
+          lightest: '#F0F0F0',
+          white: '#FFFFFF',
+        },
+      },
     },
   },
   plugins: [],
-}
+};

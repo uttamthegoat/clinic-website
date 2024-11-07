@@ -1,8 +1,8 @@
 import "./App.css";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import { Suspense } from "react";
-// import Footer from "./components/static/Footer";
-// import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar/Navbar";
 // import ScrollToTop from "./components/static/ScrollToTop";
 import allRoutes from "./utils/routes";
 import Loader from "./utils/loader";
@@ -13,8 +13,7 @@ function App() {
     <div className="App flex flex-col">
       
         <Suspense fallback={<Loader />}>
-          {/* <Header /> */}
-          {/* <Navbar /> */}
+          <Navbar />
           {/* <ScrollToTop /> */}
           <div className="routes-layout">
               <Routes>
@@ -28,7 +27,7 @@ function App() {
                 ))}
               </Routes>
           </div>
-          {/* <Footer /> */}
+          <Footer />
         </Suspense>
     </div>
   );

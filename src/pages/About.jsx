@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react'
 import { ChevronDown, ChevronUp, Smile, Clock, MapPin, Phone } from 'lucide-react'
+import { orgData } from '../assets/data'
 
 export default function AboutPage() {
   const [expandedSection, setExpandedSection] = useState(null)
@@ -14,9 +16,9 @@ export default function AboutPage() {
         <h1 className="text-4xl font-bold text-blue-800 mb-8 text-center">About Our Dental Practice</h1>
         
         <section className="bg-white rounded-lg shadow-lg p-8 mb-12">
-          <h2 className="text-3xl font-semibold text-blue-700 mb-4">Welcome to Our Jay Smiles</h2>
+          <h2 className="text-3xl font-semibold text-blue-700 mb-4">Welcome to {orgData.name}</h2>
           <p className="text-gray-700 mb-6">
-            At our practice, we're dedicated to providing comprehensive dental care for your entire family. 
+            At our practice, {"we're"} dedicated to providing comprehensive dental care for your entire family. 
             Our team of experienced professionals is committed to ensuring your comfort and delivering 
             exceptional results in a warm, welcoming environment.
           </p>
@@ -36,48 +38,37 @@ export default function AboutPage() {
         <section className="bg-white rounded-lg shadow-lg p-8 mb-12">
           <h2 className="text-3xl font-semibold text-blue-700 mb-6">Meet Our Team</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <TeamMember
-              name="Dr. Emily Johnson"
-              role="Lead Dentist"
-              bio="Dr. Johnson brings over 15 years of experience in family dentistry, specializing in cosmetic procedures and pediatric care."
-            />
-            <TeamMember
-              name="Dr. Michael Lee"
-              role="Orthodontist"
-              bio="With a passion for creating beautiful smiles, Dr. Lee offers the latest in orthodontic treatments for patients of all ages."
-            />
+            {orgData.doctors.map((doctor) => (
+              <TeamMember
+                key={doctor.id}
+                name={doctor.name}
+                role={doctor.specialty}
+                bio={doctor.bio}
+              />
+            ))}
           </div>
         </section>
 
         <section className="bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-3xl font-semibold text-blue-700 mb-6">Our Services</h2>
           <div className="space-y-4">
-            <ExpandableService
-              title="General Dentistry"
-              description="Comprehensive care including cleanings, fillings, and preventive treatments."
-              expanded={expandedSection === 'general'}
-              onClick={() => toggleSection('general')}
-            />
-            <ExpandableService
-              title="Cosmetic Dentistry"
-              description="Enhance your smile with whitening, veneers, and other aesthetic procedures."
-              expanded={expandedSection === 'cosmetic'}
-              onClick={() => toggleSection('cosmetic')}
-            />
-            <ExpandableService
-              title="Orthodontics"
-              description="Straighten your teeth with braces or clear aligners for a perfect smile."
-              expanded={expandedSection === 'ortho'}
-              onClick={() => toggleSection('ortho')}
-            />
+            {orgData.services.map((service) => (
+              <ExpandableService
+                key={service.id}
+                title={service.title}
+                description={service.description}
+                expanded={expandedSection === service.uid}
+                onClick={() => toggleSection(service.uid)}
+              />
+            ))}
           </div>
         </section>
 
         <div className="mt-12 text-center">
           <h3 className="text-2xl font-semibold text-blue-700 mb-4">Ready to Schedule Your Visit?</h3>
-          <p className="text-gray-700 mb-6">We're here to answer your questions and book your appointment.</p>
+          <p className="text-gray-700 mb-6">We&apos;re here to answer your questions and book your appointment.</p>
           <a
-            href="tel:+1234567890"
+            href={`tel:${orgData.phone}`}
             className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300"
           >
             <Phone className="w-5 h-5 mr-2" />

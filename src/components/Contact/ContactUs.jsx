@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
+import { orgData } from '../../assets/data'
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -22,7 +23,7 @@ export default function ContactUs() {
   return (
     <div className="min-h-screen bg-blue-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-center text-blue-800 mb-12">Contact Us</h1>
+        <h1 className="text-4xl font-bold text-center text-blue-800 mb-12">Contact {orgData.name}</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h2 className="text-2xl font-semibold text-blue-800 mb-6">Get in Touch</h2>
@@ -97,21 +98,21 @@ export default function ContactUs() {
                 <MapPin className="w-6 h-6 text-blue-600 mr-3 mt-1" />
                 <div>
                   <h3 className="font-semibold">Address</h3>
-                  <p className="text-gray-600">N168W20060 Main Street, Jackson, WI 53037</p>
+                  <p className="text-gray-600">{orgData.address}</p>
                 </div>
               </div>
               <div className="flex items-center">
                 <Phone className="w-6 h-6 text-blue-600 mr-3" />
                 <div>
                   <h3 className="font-semibold">Phone</h3>
-                  <p className="text-gray-600">(262) 677-3003</p>
+                  <p className="text-gray-600">{orgData.phone}</p>
                 </div>
               </div>
               <div className="flex items-center">
                 <Mail className="w-6 h-6 text-blue-600 mr-3" />
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p className="text-gray-600">info@jacksonfamilydentistrywi.com</p>
+                  <p className="text-gray-600">{orgData.email}</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -119,12 +120,9 @@ export default function ContactUs() {
                 <div>
                   <h3 className="font-semibold">Office Hours</h3>
                   <ul className="text-gray-600">
-                    <li>Monday: 8:00 AM - 5:00 PM</li>
-                    <li>Tuesday: 8:00 AM - 7:00 PM</li>
-                    <li>Wednesday: 8:00 AM - 5:00 PM</li>
-                    <li>Thursday: 8:00 AM - 5:00 PM</li>
-                    <li>Friday: 8:00 AM - 12:00 PM</li>
-                    <li>Saturday & Sunday: Closed</li>
+                    {orgData.hours.map((hour) => (
+                      <li key={hour.day}>{hour.day}: {hour.hours}</li>
+                    ))}
                   </ul>
                 </div>
               </div>

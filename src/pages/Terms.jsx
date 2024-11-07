@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { orgData } from '../assets/data'
 
 export default function TermsAndConditions() {
   const [activeSection, setActiveSection] = useState(null)
@@ -39,7 +40,7 @@ export default function TermsAndConditions() {
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-extrabold text-blue-800 mb-8 text-center">Terms and Conditions</h1>
         <p className="text-gray-600 mb-8 text-center">
-          Welcome to Jay Smiles Family Dentistry. Please read these terms and conditions carefully before using our services.
+          Welcome to {orgData.name}. Please read these terms and conditions carefully before using our services.
         </p>
         <div className="space-y-6">
           {sections.map((section, index) => (

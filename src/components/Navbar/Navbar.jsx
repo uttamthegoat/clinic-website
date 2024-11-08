@@ -1,162 +1,106 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPhone,
-  faBars,
-  faTimes,
-  faMobilePhone,
-} from "@fortawesome/free-solid-svg-icons";
-import { orgData } from "../../assets/data";
+'use client'
+
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Menu, X } from 'lucide-react'
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <nav className="bg-primary-dark-bkgrnd text-primary-light-text py-4 px-6 shadow-md">
-      <div className="container mx-auto flex justify-between items-center">
-        {/* Brand Logo */}
-        <Link to="/" className="text-2xl font-bold text-primary-light-text">
-          <img src={orgData.logo} alt="logo" className="w-auto h-14 md:h-20" />
-        </Link>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex md:space-x-4 lg:space-x-12 mx-4">
-          <Link
-            to="/about"
-            className="text-primary-light-text hover:text-secondary-light-text transition-colors text-xl"
-          >
-            About
-          </Link>
-          <Link
-            to="/services"
-            className="text-primary-light-text hover:text-secondary-light-text transition-colors text-xl"
-          >
-            Services
-          </Link>
-          <Link
-            to="/reviews"
-            className="text-primary-light-text hover:text-secondary-light-text transition-colors text-xl"
-          >
-            Reviews
-          </Link>
-          <Link
-            to="/contact"
-            className="text-primary-light-text hover:text-secondary-light-text transition-colors text-xl"
-          >
-            Contact
-          </Link>
-          <Link
-            to="/resources"
-            className="text-primary-light-text hover:text-secondary-light-text transition-colors text-xl"
-          >
-            Resources
-          </Link>
-        </div>
-
-        {/* Phone Number and Book Now Button */}
-        <div className="hidden md:flex items-center space-x-4">
-          <a
-            href={`tel:${orgData.phone}`}
-            className="flex items-center bg-transparent hover:bg-secondary-dark-bkgrnd text-primary-light-text font-semibold hover:text-primary-light-text py-2 px-4 border border-secondary-dark-bkgrnd hover:border-transparent rounded transition-all"
-          >
-            <FontAwesomeIcon
-              icon={faPhone}
-              className="mr-2 hover:text-secondary-light-text invert"
-            />
-            <span className="hidden lg:block text-primary-light-text hover:text-secondary-light-text transition-colors">
-              {orgData.phone}
-            </span>
-            <span className="block lg:hidden text-primary-light-text hover:text-secondary-light-text transition-colors">
-              Call Us
-            </span>
-          </a>
-          <Link
-            to="/book"
-            className="bg-transparent hover:bg-secondary-dark-bkgrnd text-primary-light-text font-semibold hover:text-primary-light-text py-2 px-4 border border-secondary-dark-bkgrnd hover:border-transparent rounded transition-all"
-          >
-            Book Now
-          </Link>
-        </div>
-
-        {/* Mobile Menu and Phone Buttons */}
-        <div className="md:hidden flex items-center space-x-2">
-          <a
-            href={`tel:${orgData.phone}`}
-            className="text-primary-light-text hover:text-secondary-light-text transition-colors p-2"
-          >
-            <FontAwesomeIcon icon={faMobilePhone} size="lg" className="invert" />
-            <span className="sr-only">Call us</span>
-          </a>
+    <nav className="bg-white shadow-sm">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center h-20">
+          {/* Mobile menu button */}
           <button
-            onClick={toggleMenu}
-            className="text-primary-light-text hover:text-secondary-light-text transition-colors p-2"
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden"
+            aria-label="Toggle menu"
           >
-            <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} size="lg" className="invert" />
+            {isMenuOpen ? (
+              <X className="h-6 w-6 text-gray-600" />
+            ) : (
+              <Menu className="h-6 w-6 text-gray-600" />
+            )}
           </button>
-        </div>
-      </div>
 
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden mt-4 space-y-4 absolute left-0 right-0 bg-primary-dark-bkgrnd px-6 py-4 shadow-md z-10">
-          <Link
-            to="/about"
-            className="block text-primary-light-text hover:text-secondary-light-text transition-colors"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            About
+          {/* Desktop Navigation - Left */}
+          <div className="hidden lg:flex items-center space-x-8">
+            <Link to="/doctors" className="text-gray-700 hover:text-gray-900">
+              Meet Our Doctors
+            </Link>
+            <Link to="/why-choose-us" className="text-gray-700 hover:text-gray-900">
+              Why Choose Us?
+            </Link>
+          </div>
+
+          {/* Logo */}
+          <Link to="/" className="absolute left-1/2 transform -translate-x-1/2">
+            <img
+              src="/placeholder.svg"
+              alt="Jay Smiles Logo"
+              className="h-10 w-auto"
+            />
           </Link>
-          <Link
-            to="/services"
-            className="block text-primary-light-text hover:text-secondary-light-text transition-colors"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Services
-          </Link>
-          <Link
-            to="/reviews"
-            className="block text-primary-light-text hover:text-secondary-light-text transition-colors"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Reviews
-          </Link>
-          <Link
-            to="/contact"
-            className="block text-primary-light-text hover:text-secondary-light-text transition-colors"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Contact
-          </Link>
-          <Link
-            to="/resources"
-            className="block text-primary-light-text hover:text-secondary-light-text transition-colors"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Resources
-          </Link>
-          <a
-            href={`tel:${orgData.phone}`}
-            className="block text-primary-light-text hover:text-secondary-light-text transition-colors"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <FontAwesomeIcon icon={faPhone} className="mr-2 invert" />
-            {orgData.phone}
-          </a>
-          <Link
-            to="/book"
-            className="block bg-secondary-dark-bkgrnd px-4 py-2 rounded transition-all duration-200 ease-in-out text-center hover:bg-transparent hover:border hover:border-secondary-dark-bkgrnd hover:text-primary-light-text"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Book Now
-          </Link>
+
+          {/* Desktop Navigation - Right */}
+          <div className="hidden lg:flex items-center space-x-8">
+            <Link to="/problems" className="text-gray-700 hover:text-gray-900">
+              Common Dental Problems
+            </Link>
+            <Link to="/blogs" className="text-gray-700 hover:text-gray-900">
+              Blogs
+            </Link>
+            <Link
+              to="/appointment"
+              className="bg-[#FFB5C0] text-white px-6 py-2 rounded-full hover:bg-[#FF9DAA] transition-colors"
+            >
+              Book an Appointment
+            </Link>
+          </div>
         </div>
-      )}
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="lg:hidden py-4 space-y-4">
+            <Link
+              to="/doctors"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Meet Our Doctors
+            </Link>
+            <Link
+              to="/why-choose-us"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Why Choose Us?
+            </Link>
+            <Link
+              to="/problems"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Common Dental Problems
+            </Link>
+            <Link
+              to="/blogs"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Blogs
+            </Link>
+            <Link
+              to="/appointment"
+              className="block px-4 py-2 bg-[#FFB5C0] text-white rounded-full text-center mx-4 hover:bg-[#FF9DAA] transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Book an Appointment
+            </Link>
+          </div>
+        )}
+      </div>
     </nav>
-  );
+  )
 }

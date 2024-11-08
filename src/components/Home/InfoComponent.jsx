@@ -158,7 +158,7 @@ export default function InfoComponent() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8"
+        className="max-w-7xl mx-auto px-4 py-[80px] sm:px-6 lg:px-8"
         id="blogs"
       >
         <motion.div 

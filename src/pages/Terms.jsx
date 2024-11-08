@@ -1,5 +1,10 @@
 import { useState } from 'react'
-import { orgData } from '../assets/data'
+import { ChevronDown } from 'lucide-react'
+
+// Assuming orgData is imported from a separate file
+const orgData = {
+  name: "Jay Smiles Dentistry"
+}
 
 export default function TermsAndConditions() {
   const [activeSection, setActiveSection] = useState(null)
@@ -36,36 +41,33 @@ export default function TermsAndConditions() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-primary-light-bkgrnd to-secondary-light-bkgrnd py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-extrabold text-primary-dark-text mb-8 text-center">Terms and Conditions</h1>
-        <p className="text-secondary-dark-text mb-8 text-center">
+        <h1 className="text-4xl font-extrabold text-black mb-8 text-center">Terms and Conditions</h1>
+        <p className="text-black mb-8 text-center">
           Welcome to {orgData.name}. Please read these terms and conditions carefully before using our services.
         </p>
         <div className="space-y-6">
           {sections.map((section, index) => (
-            <div key={index} className="bg-tertiary-light-bkgrnd rounded-lg shadow-md overflow-hidden">
+            <div key={index} className="bg-[#FFF1F3] rounded-lg shadow-md overflow-hidden">
               <button
                 onClick={() => setActiveSection(activeSection === index ? null : index)}
-                className="w-full text-left px-6 py-4 focus:outline-none"
+                className="w-full text-left px-6 py-4 focus:outline-none focus:ring-2 focus:ring-[#FF4D6A] focus:ring-opacity-50"
+                aria-expanded={activeSection === index}
+                aria-controls={`section-${index}`}
               >
                 <div className="flex justify-between items-center">
-                  <h2 className="text-xl font-semibold text-primary-dark-text">{section.title}</h2>
-                  <svg
-                    className={`w-6 h-6 text-buttons-blue transform transition-transform duration-200 ${
+                  <h2 className="text-xl font-semibold text-black">{section.title}</h2>
+                  <ChevronDown
+                    className={`w-6 h-6 text-gray-500 transform transition-transform duration-200 ${
                       activeSection === index ? 'rotate-180' : ''
                     }`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  />
                 </div>
               </button>
               {activeSection === index && (
-                <div className="px-6 pb-4">
-                  <p className="text-secondary-dark-text">{section.content}</p>
+                <div id={`section-${index}`} className="px-6 py-4">
+                  <p className="text-black">{section.content}</p>
                 </div>
               )}
             </div>

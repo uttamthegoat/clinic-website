@@ -1,203 +1,125 @@
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebookF,
-  faTwitter,
-  faInstagram,
-  faLinkedinIn,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faMapMarkerAlt,
-  faPhone,
-  faEnvelope,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { orgData } from "../../assets/data";
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <footer className="mt-auto bg-primary-dark-bkgrnd text-primary-light-text py-12">
+    <footer className="bg-[#FFF1F3] pt-16 pb-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold mb-4 text-primary-light-text">
-              {orgData.name}
-            </h3>
-            <p className="text-sm leading-relaxed text-secondary-light-text">
-              {orgData.description}
-            </p>
-            <div className="flex space-x-4">
-              <Link
-                to={orgData.socials.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondary-light-text hover:text-buttons-blue transition-colors"
-              >
-                <FontAwesomeIcon icon={faFacebookF} size="lg" className="invert" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link
-                to={orgData.socials.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondary-light-text hover:text-buttons-blue transition-colors"
-              >
-                <FontAwesomeIcon icon={faTwitter} size="lg" className="invert" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link
-                to={orgData.socials.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondary-light-text hover:text-buttons-blue transition-colors"
-              >
-                <FontAwesomeIcon icon={faInstagram} size="lg" className="invert" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-              <Link
-                to={orgData.socials.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondary-light-text hover:text-buttons-blue transition-colors"
-              >
-                <FontAwesomeIcon icon={faLinkedinIn} size="lg" className="invert" />
-                <span className="sr-only">LinkedIn</span>
-              </Link>
-            </div>
-          </div>
+        {/* Logo and Description */}
+        <div className="mb-12">
+          <img
+            src="/placeholder.svg"
+            alt="Jay Smiles Logo"
+            className="mb-4 w-[120px] h-[48px]"
+          />
+          <h2 className="text-2xl font-bold mb-4">Jay Smiles</h2>
+          <p className="text-gray-600 max-w-2xl">
+            Your trusted dental clinic in Bangalore, specializing in endodontics and cosmetic dentistry
+            with over 20 years of experience.
+          </p>
+        </div>
+
+        {/* Navigation Grid */}
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {/* Home Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-primary-light-text">
-              Contact Us
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li className="flex items-center text-secondary-light-text">
-                <FontAwesomeIcon
-                  icon={faMapMarkerAlt}
-                  className="h-5 w-5 mr-2 text-buttons-blue invert"
-                />
-                {orgData.address}
-              </li>
-              <li className="flex items-center text-secondary-light-text">
-                <FontAwesomeIcon
-                  icon={faPhone}
-                  className="h-5 w-5 mr-2 text-buttons-blue invert"
-                />
-                {orgData.phone}
-              </li>
-              <li className="flex items-center text-secondary-light-text">
-                <FontAwesomeIcon
-                  icon={faEnvelope}
-                  className="h-5 w-5 mr-2 text-buttons-blue invert"
-                />
-                {orgData.email}
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-primary-light-text">
-              Quick Links
-            </h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="font-semibold text-gray-900 mb-4">Home</h3>
+            <ul className="space-y-3">
               <li>
-                <Link
-                  to="/about"
-                  className="text-secondary-light-text hover:text-buttons-blue transition-colors flex items-center"
-                >
-                  <FontAwesomeIcon
-                    icon={faChevronRight}
-                    className="h-4 w-4 mr-2 invert"
-                  />
+                <Link to="/about" className="text-gray-600 hover:text-gray-900">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/services"
-                  className="text-secondary-light-text hover:text-buttons-blue transition-colors flex items-center"
-                >
-                  <FontAwesomeIcon
-                    icon={faChevronRight}
-                    className="h-4 w-4 mr-2 invert"
-                  />
-                  Our Services
+                <Link to="/contact" className="text-gray-600 hover:text-gray-900">
+                  Contact us
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/doctors"
-                  className="text-secondary-light-text hover:text-buttons-blue transition-colors flex items-center"
-                >
-                  <FontAwesomeIcon
-                    icon={faChevronRight}
-                    className="h-4 w-4 mr-2 invert"
-                  />
-                  Our Doctors
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/appointments"
-                  className="text-secondary-light-text hover:text-buttons-blue transition-colors flex items-center"
-                >
-                  <FontAwesomeIcon
-                    icon={faChevronRight}
-                    className="h-4 w-4 mr-2 invert"
-                  />
-                  Book Appointment
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-primary-light-text">
-              Legal
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  to="/terms"
-                  className="text-secondary-light-text hover:text-buttons-blue transition-colors flex items-center"
-                >
-                  <FontAwesomeIcon
-                    icon={faChevronRight}
-                    className="h-4 w-4 mr-2 invert"
-                  />
+                <Link to="/terms" className="text-gray-600 hover:text-gray-900">
                   Terms and Conditions
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          {/* Services Section */}
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-4">Services</h3>
+            <ul className="space-y-3">
               <li>
-                <Link
-                  to="/privacy"
-                  className="text-secondary-light-text hover:text-buttons-blue transition-colors flex items-center"
-                >
-                  <FontAwesomeIcon
-                    icon={faChevronRight}
-                    className="h-4 w-4 mr-2 invert"
-                  />
-                  Privacy Policy
+                <Link to="/services/clinical" className="text-gray-600 hover:text-gray-900">
+                  Clinical Dentistry
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/accessibility"
-                  className="text-secondary-light-text hover:text-buttons-blue transition-colors flex items-center"
-                >
-                  <FontAwesomeIcon
-                    icon={faChevronRight}
-                    className="h-4 w-4 mr-2 invert"
-                  />
-                  Accessibility
+                <Link to="/services/cosmetic" className="text-gray-600 hover:text-gray-900">
+                  Cosmetic Dentistry
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/orthodontics" className="text-gray-600 hover:text-gray-900">
+                  Orthodontics
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/preventive" className="text-gray-600 hover:text-gray-900">
+                  Preventive Care
                 </Link>
               </li>
             </ul>
           </div>
+
+          {/* Contact Section */}
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-4">Join us</h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="https://instagram.com/jaysmiles"
+                  className="text-gray-600 hover:text-gray-900"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://linkedin.com/company/jaysmiles"
+                  className="text-gray-600 hover:text-gray-900"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://facebook.com/jaysmiles"
+                  className="text-gray-600 hover:text-gray-900"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Facebook
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="mt-12 pt-8 border-t border-secondary-dark-bkgrnd text-center text-sm">
-          <p className="text-primary-light-text text-lg">
-            &copy; {new Date().getFullYear()} {orgData.name}. All rights reserved.
+
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-200">
+          <p className="text-gray-600 text-sm mb-4 md:mb-0">
+            Copyright © Jay Smiles {new Date().getFullYear()}
           </p>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="bg-white px-4 py-2 rounded-full text-gray-600 hover:bg-gray-50 transition-colors"
+          >
+            Back to Top
+          </button>
         </div>
       </div>
     </footer>
-  );
+  )
 }

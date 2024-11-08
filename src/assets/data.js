@@ -5,7 +5,7 @@ export const orgData = {
   logo: "https://img.freepik.com/free-vector/gradient-modern-logo-dental-clinic_62951-54.jpg",
   email: "info@cliniccenter.com",
   phone: "(123) 456-7890",
-  address: " 2011, 2nd Floor, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560038, Above Mahesh Lunch Home",
+  address: " 2011, 2nd Floor, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka - 560038, Above Mahesh Lunch Home",
   socials: {
     facebook: "https://www.facebook.com/cliniccenter",
     twitter: "https://www.twitter.com/cliniccenter",

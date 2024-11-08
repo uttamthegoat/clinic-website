@@ -12,7 +12,7 @@ import './InfoComponent.css';
 
 export default function InfoComponent() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="bg-white">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -159,6 +159,7 @@ export default function InfoComponent() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
         className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8"
+        id="blogs"
       >
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

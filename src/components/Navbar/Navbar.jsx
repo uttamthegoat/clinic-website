@@ -1,11 +1,12 @@
-'use client'
-
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
+import { HashLink } from 'react-router-hash-link';
+import { orgData } from '../../assets/data';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
 
   return (
     <nav className="bg-white shadow-sm">
@@ -26,33 +27,41 @@ export default function Navbar() {
 
           {/* Desktop Navigation - Left */}
           <div className="hidden lg:flex items-center space-x-8">
-            <Link to="/doctors" className="text-gray-700 hover:text-gray-900">
+            <HashLink 
+              smooth 
+              to="/#doctors" 
+              className="text-gray-700 hover:text-gray-900"
+            >
               Meet Our Doctors
-            </Link>
-            <Link to="/why-choose-us" className="text-gray-700 hover:text-gray-900">
+            </HashLink>
+            <HashLink 
+              smooth 
+              to="/#why-choose-us" 
+              className="text-gray-700 hover:text-gray-900"
+            >
               Why Choose Us?
-            </Link>
+            </HashLink>
           </div>
 
           {/* Logo */}
           <Link to="/" className="absolute left-1/2 transform -translate-x-1/2">
             <img
-              src="/placeholder.svg"
+              src={orgData.logo}
               alt="Jay Smiles Logo"
-              className="h-10 w-auto"
+              className="h-14 w-auto"
             />
           </Link>
 
           {/* Desktop Navigation - Right */}
           <div className="hidden lg:flex items-center space-x-8">
-            <Link to="/problems" className="text-gray-700 hover:text-gray-900">
+            <HashLink smooth to="/#common-dental-problems" className="text-gray-700 hover:text-gray-900">
               Common Dental Problems
-            </Link>
-            <Link to="/blogs" className="text-gray-700 hover:text-gray-900">
+            </HashLink>
+            <HashLink smooth to="/#blogs" className="text-gray-700 hover:text-gray-900">
               Blogs
-            </Link>
+            </HashLink>
             <Link
-              to="/appointment"
+              to="/book"
               className="bg-[#FFB5C0] text-white px-6 py-2 rounded-full hover:bg-[#FF9DAA] transition-colors"
             >
               Book an Appointment
@@ -63,36 +72,40 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden py-4 space-y-4">
-            <Link
-              to="/doctors"
+            <HashLink
+              smooth
+              to="/#doctors"
               className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
               onClick={() => setIsMenuOpen(false)}
             >
               Meet Our Doctors
-            </Link>
-            <Link
-              to="/why-choose-us"
+            </HashLink>
+            <HashLink
+              smooth
+              to="/#why-choose-us"
               className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
               onClick={() => setIsMenuOpen(false)}
             >
               Why Choose Us?
-            </Link>
-            <Link
-              to="/problems"
+            </HashLink>
+            <HashLink
+              smooth
+              to="/#common-dental-problems"
               className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
               onClick={() => setIsMenuOpen(false)}
             >
               Common Dental Problems
-            </Link>
-            <Link
-              to="/blogs"
+            </HashLink>
+            <HashLink
+              smooth
+              to="/#blogs"
               className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
               onClick={() => setIsMenuOpen(false)}
             >
               Blogs
-            </Link>
+            </HashLink>
             <Link
-              to="/appointment"
+              to="/book"
               className="block px-4 py-2 bg-[#FFB5C0] text-white rounded-full text-center mx-4 hover:bg-[#FF9DAA] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >

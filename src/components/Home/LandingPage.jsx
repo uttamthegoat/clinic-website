@@ -86,7 +86,7 @@ export default function LandingPage() {
   const featuresInView = useInView(featuresRef, { once: true });
 
   return (
-    <div className="min-h-screen bg-[#FFF5F5]">
+    <div className="bg-[#FFF5F5]">
       {/* Hero Section */}
       <motion.section 
         ref={heroRef}

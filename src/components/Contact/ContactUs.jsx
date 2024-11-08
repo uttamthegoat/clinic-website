@@ -1,53 +1,47 @@
-'use client'
-
-import { useState } from 'react'
-import { MapPin, Phone, Mail, Clock } from 'lucide-react'
-
-// Assuming orgData is imported from a separate file
-const orgData = {
-  name: "Jay Smiles Dentistry",
-  address: "123 Dental Street, City, State 12345",
-  phone: "(123) 456-7890",
-  email: "contact@jaysmiles.com",
-  hours: [
-    { day: "Monday-Friday", hours: "9:00 AM - 6:00 PM" },
-    { day: "Saturday", hours: "9:00 AM - 2:00 PM" },
-    { day: "Sunday", hours: "Closed" }
-  ]
-}
+import { useState } from "react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { orgData } from "../../assets/data";
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  })
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-  }
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+  };
 
   return (
     <div className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-center text-black mb-4">Contact {orgData.name}</h1>
+        <h1 className="text-4xl font-bold text-center text-black mb-4">
+          Contact {orgData.name}
+        </h1>
         <p className="text-center text-black mb-12 max-w-2xl mx-auto">
-          We&apos;re here to help and answer any questions you might have. We look forward to hearing from you.
+          We&apos;re here to help and answer any questions you might have. We
+          look forward to hearing from you.
         </p>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Form */}
           <div className="bg-[#FFF1F3] rounded-xl shadow-lg p-8 transform hover:scale-[1.02] transition-transform duration-300">
-            <h2 className="text-2xl font-semibold text-[#FF4D6A] mb-6">Send Us a Message</h2>
+            <h2 className="text-2xl font-semibold text-[#FF4D6A] mb-6">
+              Send Us a Message
+            </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-black mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-black mb-2"
+                >
                   Full Name
                 </label>
                 <input
@@ -62,7 +56,10 @@ export default function ContactUs() {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-black mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-black mb-2"
+                >
                   Email Address
                 </label>
                 <input
@@ -77,7 +74,10 @@ export default function ContactUs() {
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-black mb-2">
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-black mb-2"
+                >
                   Phone Number
                 </label>
                 <input
@@ -91,7 +91,10 @@ export default function ContactUs() {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-black mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-black mb-2"
+                >
                   Your Message
                 </label>
                 <textarea
@@ -116,7 +119,9 @@ export default function ContactUs() {
 
           {/* Contact Information */}
           <div className="bg-[#FFF1F3] rounded-xl shadow-lg p-8 transform hover:scale-[1.02] transition-transform duration-300">
-            <h2 className="text-2xl font-semibold text-[#FF4D6A] mb-8">Contact Information</h2>
+            <h2 className="text-2xl font-semibold text-[#FF4D6A] mb-8">
+              Contact Information
+            </h2>
             <div className="space-y-6">
               <div className="flex items-start space-x-4 p-4 rounded-lg hover:bg-white transition-colors duration-200">
                 <MapPin className="w-6 h-6 text-[#FF4D6A] flex-shrink-0" />
@@ -125,7 +130,7 @@ export default function ContactUs() {
                   <p className="text-black mt-1">{orgData.address}</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-4 p-4 rounded-lg hover:bg-white transition-colors duration-200">
                 <Phone className="w-6 h-6 text-[#FF4D6A] flex-shrink-0" />
                 <div>
@@ -161,5 +166,5 @@ export default function ContactUs() {
         </div>
       </div>
     </div>
-  )
+  );
 }

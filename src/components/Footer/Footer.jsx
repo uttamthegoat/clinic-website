@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom'
+import { orgData } from '../../assets/data'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#FFF1F3] pt-16 pb-8">
+    <footer className="mt-auto bg-[#FFF1F3] pt-16 pb-8">
       <div className="container mx-auto px-4">
         {/* Logo and Description */}
         <div className="mb-12">
           <img
-            src="/placeholder.svg"
+            src={orgData.logo}
             alt="Jay Smiles Logo"
-            className="mb-4 w-[120px] h-[48px]"
+            className="mb-4 w-[120px] h-auto"
           />
           <h2 className="text-2xl font-bold mb-4">Jay Smiles</h2>
           <p className="text-gray-600 max-w-2xl">
@@ -75,7 +76,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="https://instagram.com/jaysmiles"
+                  href={orgData.instagram}
                   className="text-gray-600 hover:text-gray-900"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -85,7 +86,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://linkedin.com/company/jaysmiles"
+                  href={orgData.linkedin}
                   className="text-gray-600 hover:text-gray-900"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -95,7 +96,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://facebook.com/jaysmiles"
+                  href={orgData.facebook}
                   className="text-gray-600 hover:text-gray-900"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -110,7 +111,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-200">
           <p className="text-gray-600 text-sm mb-4 md:mb-0">
-            Copyright © Jay Smiles {new Date().getFullYear()}
+            Copyright © {orgData.name} {new Date().getFullYear()}
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

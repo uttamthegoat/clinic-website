@@ -5,6 +5,7 @@ const Home = lazy(() => import("../pages/Home"));
 const AboutPage = lazy(() => import("../pages/About"));
 const TermsPage = lazy(() => import("../pages/Terms"));
 const ContactUsPage = lazy(() => import("../pages/ContactUs"));
+const ReviewsPage = lazy(() => import("../pages/Reviews"));
 // const Projects = lazy(() => import("../pages/Projects"));
 
 const allRoutes = [
@@ -27,6 +28,11 @@ const allRoutes = [
     id: 4,
     path: "/contact",
     component: <ContactUsPage />,
+  },
+  {
+    id: 5,
+    path: "/reviews",
+    component: <ReviewsPage />,
   },
 ];
 

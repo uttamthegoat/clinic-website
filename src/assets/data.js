@@ -72,4 +72,56 @@ export const orgData = {
       hours: "Closed",
     },
   ],
+  review: [
+    {
+      name: "Alice Johnson",
+      rating: 5,
+      description: "Fantastic service! The staff was friendly and Dr. Jay was very attentive to my concerns.",
+    },
+    {
+      name: "Michael Brown",
+      rating: 4,
+      description: "Great experience overall. The clinic is clean and well-organized. Highly recommend Jay Smiles!",
+    },
+    {
+      name: "Sophia Williams",
+      rating: 5,
+      description: "Best dental experience I've had! Dr. Jay is incredibly skilled and gentle.",
+    },
+    {
+      name: "James Smith",
+      rating: 3,
+      description: "The treatment was effective, but the wait time was a bit long. Still a good clinic overall.",
+    },
+    {
+      name: "Olivia Davis",
+      rating: 4,
+      description: "Friendly staff and thorough treatment. Jay Smiles really cares about their patients.",
+    },
+    {
+      name: "Ethan Martinez",
+      rating: 5,
+      description: "Excellent service! The staff is welcoming and the dental care is top-notch.",
+    },
+    {
+      name: "Isabella Garcia",
+      rating: 5,
+      description: "Amazing experience! The clinic was clean, and Dr. Jay made me feel comfortable throughout.",
+    },
+    {
+      name: "Daniel Lee",
+      rating: 4,
+      description: "Very professional and clean environment. Would recommend to others looking for quality dental care.",
+    },
+    {
+      name: "Mia Hernandez",
+      rating: 3,
+      description: "The treatment was fine, but I felt it was a bit rushed. Overall a decent experience.",
+    },
+    {
+      name: "Noah Wilson",
+      rating: 5,
+      description: "Couldn't be happier with my visit! Jay Smiles offers fantastic dental care.",
+    },
+  ],
 };

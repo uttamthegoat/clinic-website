@@ -1,11 +1,11 @@
 export const orgData = {
-  name: "Clinic Center",
+  name: "Jay Smiles",
   description:
     "Providing exceptional healthcare services with a focus on patient comfort and advanced medical technology.",
   logo: "https://img.freepik.com/free-vector/gradient-modern-logo-dental-clinic_62951-54.jpg",
   email: "info@cliniccenter.com",
   phone: "(123) 456-7890",
-  address: "1234 Main St, Anytown, USA",
+  address: " 2011, 2nd Floor, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560038, Above Mahesh Lunch Home",
   socials: {
     facebook: "https://www.facebook.com/cliniccenter",
     twitter: "https://www.twitter.com/cliniccenter",
@@ -125,3 +125,34 @@ export const orgData = {
     },
   ],
 };
+
+export const blogData = [
+  {
+    id: 1,
+    title: "The Importance of Regular Dental Check-ups",
+    date: "November 8, 2024",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbq1LRx2Q9367z14M4pAlDVpdghQJ2TAV6IQ&s",
+    link: "#dummy"
+  },
+  {
+    id: 2,
+    title: "The Importance of Regular Dental Check-ups",
+    date: "November 8, 2024",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbq1LRx2Q9367z14M4pAlDVpdghQJ2TAV6IQ&s",
+    link: "#dummy"
+  },
+  {
+    id: 3,
+    title: "The Importance of Regular Dental Check-ups",
+    date: "November 8, 2024",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbq1LRx2Q9367z14M4pAlDVpdghQJ2TAV6IQ&s",
+    link: "#dummy"
+  },
+  {
+    id: 4,
+    title: "The Importance of Regular Dental Check-ups",
+    date: "November 8, 2024",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbq1LRx2Q9367z14M4pAlDVpdghQJ2TAV6IQ&s",
+    link: "#dummy"
+  }
+]

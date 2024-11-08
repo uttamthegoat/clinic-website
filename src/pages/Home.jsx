@@ -1,11 +1,13 @@
-import React from 'react'
+import InfoComponent from "../components/Home/InfoComponent"
+import LandingPage from "../components/Home/LandingPage"
 
 const Home = () => {
   return (
     <div>
-      <p className='text-primary-text-light text-2xl font-bold'>Home</p>
+      <LandingPage />
+      <InfoComponent />
     </div>
   )
 }
 
-export default Home;
+export default Home

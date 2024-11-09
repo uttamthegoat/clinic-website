@@ -3,15 +3,35 @@ import { Link } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { HashLink } from 'react-router-hash-link';
 import { orgData } from '../../assets/data';
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const prev = scrollY.getPrevious();
+    if (latest > prev && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
+
   return (
     <>
-      <div className="h-20"></div>
-      
-      <nav className="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
+      <motion.nav
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" },
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+      className="header fixed w-full z-20"
+    >
+      <nav className="bg-white shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-20">
             {/* Mobile menu button */}
@@ -117,6 +137,7 @@ export default function Navbar() {
           )}
         </div>
       </nav>
+      </motion.nav>
     </>
   )
 }

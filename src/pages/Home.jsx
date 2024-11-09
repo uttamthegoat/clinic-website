@@ -3,7 +3,7 @@ import LandingPage from "../components/Home/LandingPage"
 
 const Home = () => {
   return (
-    <div>
+    <div className="mt-14">
       <LandingPage />
       <InfoComponent />
     </div>

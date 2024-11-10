@@ -212,10 +212,10 @@ export default function InfoComponent() {
                       to={item.link} 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute top-4 right-4 bg-white rounded-full px-2 py-1 shadow-md hover:bg-gray-100 transition-colors duration-300"
+                      className="absolute top-4 right-4 bg-black rounded-full px-2 py-1 shadow-md transition-colors duration-300"
                     >
                       <span className="text-xl">
-                          <FontAwesomeIcon icon={faExternalLink} />
+                          <FontAwesomeIcon icon={faExternalLink} className='text-white invert' />
                       </span>
                     </Link>
                   </div>

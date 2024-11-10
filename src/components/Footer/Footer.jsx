@@ -10,7 +10,7 @@ export default function Footer() {
           <img
             src={orgData.logo}
             alt="Jay Smiles Logo"
-            className="mb-4 w-[120px] h-auto"
+            className="mb-4 w-[120px] md:w-[170px] h-auto"
           />
           <h2 className="text-2xl font-bold mb-4">Jay Smiles</h2>
           <p className="text-gray-600 max-w-2xl">

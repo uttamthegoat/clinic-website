@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, ChevronUp, ChevronDown } from "lucide-react";
+import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Component() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -51,13 +52,25 @@ export default function Component() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFF1F3]">
+    <div className="min-h-screen bg-[#fffbfc]">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12 mt-20">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8">
+        <motion.h1 
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           Where traditional values meet <span className="text-blue-600">modern</span> dentistry
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        </motion.h1>
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           <div className="p-6">
             <div className="text-4xl font-bold text-blue-600 mb-2">90+</div>
             <p className="text-gray-600">Happy Patients</p>
@@ -70,11 +83,17 @@ export default function Component() {
             <div className="text-4xl font-bold text-blue-600 mb-2">6</div>
             <p className="text-gray-600">Dental Awards</p>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Values Section */}
-      <section className="container mx-auto px-4 py-12">
+      <motion.section 
+        className="container mx-auto px-4 py-12"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
             The values we hold dear to our hearts
@@ -96,10 +115,16 @@ export default function Component() {
             />
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Founder Section */}
-      <section className="container mx-auto px-4 py-12">
+      <motion.section 
+        className="container mx-auto px-4 py-12"
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Meet Our Founder</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -118,14 +143,28 @@ export default function Component() {
             />
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Technology Section */}
       <section className="container mx-auto px-4 py-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8">Empowering Care with Technology</h2>
+        <motion.h2 
+          className="text-2xl md:text-3xl font-bold mb-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          Empowering Care with Technology
+        </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {whyChooseUsSlides.map((slide, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg p-6">
+            <motion.div 
+              key={index} 
+              className="bg-white rounded-lg shadow-lg p-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
               <h3 className="text-xl font-bold mb-4">{slide.title}</h3>
               <p className="text-gray-600 mb-4">{slide.description}</p>
               <img
@@ -133,13 +172,19 @@ export default function Component() {
                 alt={slide.title}
                 className="rounded-lg object-cover w-full h-48"
               />
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       {/* Why Choose Us Slider Section */}
-      <section className="container mx-auto px-4 py-12">
+      <motion.section 
+        className="container mx-auto px-4 py-12"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <h2 className="text-2xl md:text-3xl font-bold mb-8">Why Choose Us</h2>
         <div className="relative bg-white rounded-lg shadow-lg p-8">
           <div className="flex items-center">
@@ -187,31 +232,65 @@ export default function Component() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="container mx-auto px-4 py-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8">Frequently Asked Questions</h2>
+      {/* FAQ Section */}
+      <motion.section 
+        className="container mx-auto px-4 py-12"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.h2 
+          className="text-2xl md:text-3xl font-bold mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Frequently Asked Questions
+        </motion.h2>
         <div className="bg-white rounded-lg shadow-lg p-8">
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="border-b border-gray-200 last:border-0">
+              <motion.div 
+                key={index} 
+                className="border-b border-gray-200 last:border-0"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
                 <button
                   className="w-full py-4 flex justify-between items-center text-left"
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                 >
                   <h3 className="text-lg font-semibold">{faq.question}</h3>
-                  {openFaq === index ? (
-                    <ChevronUp className="w-5 h-5 text-gray-500" />
-                  ) : (
+                  <motion.div
+                    animate={{ rotate: openFaq === index ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
                     <ChevronDown className="w-5 h-5 text-gray-500" />
-                  )}
+                  </motion.div>
                 </button>
-                {openFaq === index && <p className="text-gray-600 mt-4">{faq.answer}</p>}
-              </div>
+                <AnimatePresence>
+                  {openFaq === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      style={{ overflow: "hidden" }}
+                    >
+                      <p className="text-gray-600 my-4">{faq.answer}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

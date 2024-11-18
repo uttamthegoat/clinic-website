@@ -6,5 +6,5 @@ import isLoggedIn from '../middleware/auth.middleware.js'
 const router = Router()
 
 router.get('/appointments', isLoggedIn, asyncHandler(adminControllers.getAllAppointments))
-
+router.post('/make-appointment', isLoggedIn, asyncHandler(adminControllers.makeAppointment))
 export default router

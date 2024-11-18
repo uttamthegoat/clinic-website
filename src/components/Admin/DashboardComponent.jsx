@@ -1,40 +1,23 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { sidebarItems } from "./SidebarContent";
-import { useNavigate, useLocation, Outlet } from "react-router-dom";
 
 export default function DashboardComponent() {
-  const location = useLocation();
-  const [selectedItem, setSelectedItem] = useState(() => {
-    const currentPath = location.pathname;
-    return sidebarItems.find(item => item.route === currentPath) || sidebarItems[0];
-  });
+  const [selectedItem, setSelectedItem] = useState(sidebarItems[0]);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navigate = useNavigate();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // Update selected item when route changes
-  useEffect(() => {
-    const currentItem = sidebarItems.find(item => item.route === location.pathname);
-    if (currentItem) {
-      setSelectedItem(currentItem);
-    }
-  }, [location.pathname]);
-
   // Handle sidebar item click
   const handleItemClick = (item) => {
     setSelectedItem(item);
-    console.log('Navigating to:', item.route);
-    navigate(item.route);
     setIsMobileMenuOpen(false);
   };
-
 
   return (
     <div className="flex h-screen bg-gray-100">
@@ -82,18 +65,16 @@ export default function DashboardComponent() {
         </motion.div>
       )}
 
-      {/* Main content with Outlet */}
+      {/* Main content */}
       <main className="flex-1 p-8 overflow-y-auto">
         <motion.div
-          key={location.pathname}
+          key={selectedItem.label}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
           className="bg-white shadow-md rounded-lg p-6"
         >
-          {console.log('Current pathname:', location.pathname)}
-          <Outlet />
-          <div>Current path: {location.pathname}</div>
+          {selectedItem.element}
         </motion.div>
       </main>
     </div>

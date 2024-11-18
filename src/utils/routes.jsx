@@ -1,6 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
 import { lazy } from "react";
-import DashboardComponent from "../components/Admin/DashboardComponent";
 
 const Home = lazy(() => import("../pages/Home"));
 const AboutPage = lazy(() => import("../pages/About"));
@@ -10,10 +9,6 @@ const ReviewsPage = lazy(() => import("../pages/Reviews"));
 const BookingPage = lazy(() => import("../pages/Booking"));
 const AuthPage = lazy(() => import("../pages/Auth"));
 const AdminPage = lazy(() => import("../pages/Admin"));
-const DefaultPage = lazy(() => import("../components/Admin/AdminPages/DefaultPage"));
-const AppointmentsPage = lazy(() => import("../components/Admin/AdminPages/AppointmentsPage"));
-const SettingsPage = lazy(() => import("../components/Admin/AdminPages/SettingsPage"));
-const HelpPage = lazy(() => import("../components/Admin/AdminPages/HelpPage"));
 // const Projects = lazy(() => import("../pages/Projects"));
 
 const allRoutes = [
@@ -64,20 +59,6 @@ const allRoutes = [
     path: "/admin/*",
     element: <AdminPage />,
     hideNavbar: true,
-    children: [
-      {
-        path: "appointments",
-        element: <AppointmentsPage />
-      },
-      {
-        path: "settings",
-        element: <SettingsPage />
-      },
-      {
-        path: "help",
-        element: <HelpPage />
-      }
-    ]
   },
 ];
 

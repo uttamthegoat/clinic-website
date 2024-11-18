@@ -17,11 +17,11 @@ export default function Authentication() {
   const onSubmit = (data) => {
     console.log(data)
     // Here you would typically send the data to your backend for authentication
-    axiosInstance.post('/login', data)
+    axiosInstance.post('/auth/login', data)
     .then(res => {
       if(res.data.success) {
         toast.success(res.data.message)
-        navigate('/admin');
+        navigate('/admin/');
       }
     })
     .catch(err => {

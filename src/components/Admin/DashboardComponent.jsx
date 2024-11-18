@@ -1,16 +1,40 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { sidebarItems } from "./SidebarContent.js";
+import { sidebarItems } from "./SidebarContent";
+import { useNavigate, useLocation, Outlet } from "react-router-dom";
 
 export default function DashboardComponent() {
-  const [selectedItem, setSelectedItem] = useState(sidebarItems[0]);
+  const location = useLocation();
+  const [selectedItem, setSelectedItem] = useState(() => {
+    const currentPath = location.pathname;
+    return sidebarItems.find(item => item.route === currentPath) || sidebarItems[0];
+  });
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  // Update selected item when route changes
+  useEffect(() => {
+    const currentItem = sidebarItems.find(item => item.route === location.pathname);
+    if (currentItem) {
+      setSelectedItem(currentItem);
+    }
+  }, [location.pathname]);
+
+  // Handle sidebar item click
+  const handleItemClick = (item) => {
+    setSelectedItem(item);
+    console.log('Navigating to:', item.route);
+    navigate(item.route);
+    setIsMobileMenuOpen(false);
+  };
+
 
   return (
     <div className="flex h-screen bg-gray-100">
@@ -23,7 +47,7 @@ export default function DashboardComponent() {
       >
         <SidebarContent
           selectedItem={selectedItem}
-          setSelectedItem={setSelectedItem}
+          setSelectedItem={handleItemClick}
         />
       </motion.aside>
 
@@ -52,27 +76,24 @@ export default function DashboardComponent() {
           <nav className="relative flex flex-col w-64 h-full bg-white shadow-lg">
             <SidebarContent
               selectedItem={selectedItem}
-              setSelectedItem={(item) => {
-                setSelectedItem(item);
-                setIsMobileMenuOpen(false);
-              }}
+              setSelectedItem={handleItemClick}
             />
           </nav>
         </motion.div>
       )}
 
-      {/* Main content */}
+      {/* Main content with Outlet */}
       <main className="flex-1 p-8 overflow-y-auto">
         <motion.div
-          key={selectedItem.label}
+          key={location.pathname}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
           className="bg-white shadow-md rounded-lg p-6"
         >
-          <h2 className="text-2xl font-semibold mb-4">{selectedItem.label}</h2>
-          <p>{selectedItem.content}</p>
-          {/* Add more content here based on the selected item */}
+          {console.log('Current pathname:', location.pathname)}
+          <Outlet />
+          <div>Current path: {location.pathname}</div>
         </motion.div>
       </main>
     </div>

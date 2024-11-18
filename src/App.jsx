@@ -10,13 +10,31 @@ import Toaster from "./utils/Toaster";
 
 function App() {
   const location = useLocation();
-  const currentRoute = allRoutes.find(route => route.path === location.pathname);
+  const currentPath = location.pathname;
   
+  // Modified findCurrentRoute function
+  const findCurrentRoute = (routes) => {
+    // First check if we're in any admin route
+    if (currentPath.startsWith('/admin')) {
+      return routes.find(route => route.path === '/admin/*');
+    }
+
+    // For non-admin routes
+    for (const route of routes) {
+      if (currentPath === route.path) {
+        return route;
+      }
+    }
+    return null;
+  };
+
+  const currentRoute = findCurrentRoute(allRoutes);
+
   return (
     <div className="App flex flex-col">
         <Suspense fallback={<Loader />}>
           <ScrollToTop />
-          {!currentRoute?.hideNavbar && <Navbar />}
+          {!!currentRoute?.hideNavbar === false && <Navbar />}
           <div className="routes-layout">
               <Routes>
                 {allRoutes.map((route) => (
@@ -24,7 +42,7 @@ function App() {
                     key={route.id}
                     exact
                     path={route.path}
-                    element={route.component}
+                    element={route.element}
                   />
                 ))}
               </Routes>

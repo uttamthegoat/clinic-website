@@ -10,7 +10,7 @@ dotenv.config()
 import GlobalErrorHandler from './utils/GlobalErrorHandler.js'
 import ExpressError from './utils/ExpressError.js'
 import authRoutes from './routes/auth.routes.js'
-
+import adminRoutes from './routes/admin.routes.js'
 const connectDB = async () => {
   try {
     const mongoUrl = process.env.MONGO_URL || 'fallback_url_here'
@@ -26,7 +26,7 @@ const PORT = process.env.PORT || 5000
 
 const corsOptions = {
   origin: 'http://localhost:5173',
-  // origin: '',
+  // origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }
@@ -43,11 +43,12 @@ app.get('/', (req, res) => {
 
 // all routes
 app.use('/api/v1/auth', authRoutes)
+app.use('/api/v1/admin', adminRoutes)
 
 // wrong routes handler
 app.all('*', (req, res, next) => {
   try {
-    new ExpressError(404, false, 'Page not found')
+    throw new ExpressError(404, false, 'Page not found')
   } catch (error) {
     next(error)
   }

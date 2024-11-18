@@ -98,6 +98,7 @@ export default function AppointmentBooking() {
                     variants={inputVariants}
                     animate={focusedField === field ? "focused" : "unfocused"}
                     transition={{ duration: 0.2 }}
+                    placeholder={`Enter your ${field}`}
                     className={`mt-1 block w-full rounded-md border border-gray-300 bg-gray-50 shadow-sm focus:border-[#FFB5B5] focus:ring focus:ring-[#FFB5B5] focus:ring-opacity-50 px-4 py-3 text-base transition-colors duration-200 ease-in-out ${errors[field] ? 'border-red-500' : ''}`}
                   />
                   <AnimatePresence>

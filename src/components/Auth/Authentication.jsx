@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useForm } from 'react-hook-form'
 import { Eye, EyeOff } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
+import axiosInstance from '../../utils/axiosConfig'
+import { toast } from 'react-toastify'
 
 export default function Authentication() {
   const [showPassword, setShowPassword] = useState(false)
@@ -15,8 +17,16 @@ export default function Authentication() {
   const onSubmit = (data) => {
     console.log(data)
     // Here you would typically send the data to your backend for authentication
-    alert("Login attempt with email: " + data.email)
-    navigate('/admin')
+    axiosInstance.post('/login', data)
+    .then(res => {
+      if(res.data.success) {
+        toast.success(res.data.message)
+        navigate('/admin');
+      }
+    })
+    .catch(err => {
+      toast.error(err.response.data.message)
+    })
   }
 
   return (

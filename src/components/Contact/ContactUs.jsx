@@ -152,10 +152,9 @@ export default function ContactUs() {
                 <div>
                   <h3 className="font-semibold text-black">Office Hours</h3>
                   <ul className="text-black mt-1 space-y-1">
-                    {orgData.hours.map((hour) => (
-                      <li key={hour.day} className="flex justify-between">
-                        <span className="font-medium">{hour.day}:</span>
-                        <span>{hour.hours}</span>
+                    {orgData.hours.map((hour, index) => (
+                      <li key={index} className="text-black">
+                        {hour}
                       </li>
                     ))}
                   </ul>

@@ -1,26 +1,63 @@
-import org_Logo from "./org_Logo_nobg.png";
+import org_Logo from "./images/logo/org_Logo_nobg.png";
+import { doctorImages } from './images/doctors'
+import { facilityImages } from './images/facility'
 
 export const orgData = {
   name: "Jay Smiles",
+  founder: {
+    name: "Dr. JayShree Hegde",
+    image: doctorImages.JayShree,
+    description: "With over 32 years of experience in dental care, Dr. JayShreeHegde has established herself as a leading professional in modern dentistry. Her commitment to patient care and continuous learning has helped transform countless smiles."
+  },
   description:
-    "Providing exceptional healthcare services with a focus on patient comfort and advanced medical technology.",
+    "Jay Smiles is a one stop Dental centre for all your dental needs. It is crafted to render fine dentistry by specialists in all fields. The experienced staff here are trained to ensure you feel comfortable and relaxed. The services we render range from microscopic root canal treatments, tooth colored fillings, crowns and bridges, invisalign, orthodontic treatment, implants, gum therapy, geriatric and pediatric care. With advanced technology incorporated through state of the art equipments, we are able to render fine dentistry .",
   logo: org_Logo,
   email: "info@cliniccenter.com",
   phone: "(123) 456-7890",
   address: " 2011, 2nd Floor, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka - 560038, Above Mahesh Lunch Home",
   city: "Bengaluru",
   state: "Karnataka",
+  facilityImages: facilityImages,
   socials: {
     facebook: "https://www.facebook.com/cliniccenter",
     twitter: "https://www.twitter.com/cliniccenter",
     instagram: "https://www.instagram.com/cliniccenter",
     linkedin: "https://www.linkedin.com/cliniccenter",
   },
-  teamMembers : Array(10).fill({
-    name: "Tony Ferguson",
-    image: "https://img.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg",
-    role: "Dental Surgeon"
-  }),
+  teamMembers : [
+    {
+      id: 1,
+      name: "Dr. JayShree",
+      image: doctorImages.JayShree,
+      role: "Dental Surgeon",
+      Specialization: ["General Dentistry", "Cosmetic Dentistry", "Orthodontics"],
+      experience: "20+ years"
+    },
+    {
+      id: 2,
+      name: "Dr. Sandesh Karanth. K",
+      image: doctorImages.SandeshKaranth,
+      role: "Orthodontist",
+      Specialization: ["Comprehensive orthodontic treatment for children and adults", "Advanced clear aligner therapy", "Cerifited Invisalign provider", "Surgical orthodontics", "Cleft lip and palate Orthodontics"],
+      experience: "10+ years"
+    },
+    {
+      id: 3,
+      name: "Dr. Romir Navaneetham",
+      image: doctorImages.RomirNavaneetham,
+      role: "Orthodontist",
+      Specialization: ["Comprehensive orthodontic treatment for children and adults", "Advanced clear aligner therapy", "Cerifited Invisalign provider", "Surgical orthodontics", "Cleft lip and palate Orthodontics"],
+      experience: "10+ years"
+    }
+//     Dr. Sandesh Karanth. K believes in a personalized approach to treatment, taking the time to understand each patient’s needs and goals.         Dr. Karanth's focus is on creating beautiful, healthy smiles while ensuring a comfortable and positive experience.
+// Dr. Sandesh Karanth. K specializes in:
+
+// Comprehensive orthodontic treatment for children and adults
+// Advanced clear aligner therapy 
+// Cerifited Invisalign provider
+// Surgical orthodontics 
+// Cleft lip and palate Orthodontics
+  ],
   services: [
     {
       id: 1,
@@ -42,30 +79,9 @@ export const orgData = {
     },
   ],
   hours: [
-    {
-      day: "Monday",
-      hours: "8:00 AM - 5:00 PM",
-    },
-    {
-      day: "Tuesday",
-      hours: "8:00 AM - 7:00 PM",
-    },
-    {
-      day: "Wednesday",
-      hours: "8:00 AM - 5:00 PM",
-    },
-    {
-      day: "Thursday",
-      hours: "8:00 AM - 5:00 PM",
-    },
-    {
-      day: "Friday",
-      hours: "8:00 AM - 12:00 PM",
-    },
-    {
-      day: "Saturday & Sunday",
-      hours: "Closed",
-    },
+    "Mon - Sat",
+    "10:00 AM - 01:30 PM",
+    "02:30 PM - 07:00 PM"
   ],
   testimonials : Array(20 ).fill({
     name: "Kathenna Hegde",

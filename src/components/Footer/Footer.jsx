@@ -13,9 +13,8 @@ export default function Footer() {
             className="mb-4 w-[120px] md:w-[170px] h-auto"
           />
           <h2 className="text-2xl font-bold mb-4">Jay Smiles</h2>
-          <p className="text-gray-600 max-w-2xl">
-            Your trusted dental clinic in Bangalore, specializing in endodontics and cosmetic dentistry
-            with over 20 years of experience.
+          <p className="text-gray-600">
+            {orgData.description}
           </p>
         </div>
 

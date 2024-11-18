@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unknown-property */
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { useState, useRef } from "react";
 import { orgData } from "../../assets/data";
@@ -73,7 +74,7 @@ export default function ReviewComponent() {
           <h2 className="text-3xl md:text-4xl font-bold mb-8">
             Meet our dedicated <span className="text-[#FFB5B5]">team</span>
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={index}
@@ -81,14 +82,8 @@ export default function ReviewComponent() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="text-center"
               >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full rounded-lg mb-3"
-                />
-                <p className="font-medium">{member.name}</p>
+                <TeamMemberCard member={member} />
               </motion.div>
             ))}
           </div>
@@ -307,7 +302,7 @@ export default function ReviewComponent() {
             Visit our <span className="text-[#FFB5B5]">Clinic</span>
           </motion.h2>
           
-          <div className="flex flex-col gap-6 md:relative">
+          <div className="flex flex-col gap-6 md:relative mb-20">
             {/* Image Container */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -320,7 +315,7 @@ export default function ReviewComponent() {
               <div 
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
-                  backgroundImage: `url('https://verainterior.com/wp-content/uploads/2024/05/Dental-Clinic-Interior-Design-jpg.webp')`,
+                  backgroundImage: `url(${orgData.facilityImages.facility3})`,
                 }}
               />
             </motion.div>
@@ -331,15 +326,15 @@ export default function ReviewComponent() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative md:absolute md:right-8 md:top-[10%] md:-translate-y-1/2 bg-white rounded-3xl p-8 w-full md:w-auto md:max-w-md shadow-lg"
+              className="relative md:absolute md:right-8 md:top-[20%] md:-translate-y-1/2 bg-white rounded-3xl p-8 w-full md:w-auto md:max-w-md shadow-lg"
             >
               <h3 className="text-2xl text-[#FFB5B5] font-medium mb-4">
                 {orgData.city}, <span className="text-[#4A2B29]">{orgData.state}</span>
               </h3>
               
-              <p className="text-gray-600 mb-8">
+              {/* <p className="text-gray-600 mb-8">
                 {orgData.description}
-              </p>
+              </p> */}
               
               <div className="space-y-3 text-[#4A2B29]">
                 <div className="flex items-start">
@@ -358,3 +353,73 @@ export default function ReviewComponent() {
     </div>
   );
 }
+
+
+
+const ImageWithDynamicClass = ({ src, alt }) => {
+  const [isWider, setIsWider] = useState(true);
+  const imgRef = useRef(null);
+
+  const handleLoad = () => {
+    if (imgRef.current) {
+      setIsWider(imgRef.current.naturalWidth > imgRef.current.naturalHeight);
+    }
+  };
+
+  return (
+    <img
+      ref={imgRef}
+      src={src}
+      alt={alt}
+      onLoad={handleLoad}
+      className={isWider ? "w-full h-auto block mx-auto" : "h-full w-auto block mx-auto rounded-lg"}
+    />
+  );
+};
+
+const TeamMemberCard = ({ member }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.div
+      className="text-center relative"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="h-60 w-60 md:h-56 md:w-56 mx-auto overflow-hidden rounded-lg">
+        <ImageWithDynamicClass
+          src={member.image}
+          alt={member.name}
+        />
+      </div>
+      <p className="font-medium mt-3">{member.name}</p>
+      <p className="text-gray-600 text-sm">{member.role}</p>
+
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0, y: -270, scale: 0.95 }}
+            animate={{ opacity: 1, y: -270  , scale: 1 }}
+            exit={{ opacity: 0, y: -270, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="absolute z-10 left-[10%] md:left-3/4 transform -translate-x-1/2 mt-2 w-72 bg-[#fff0f0] rounded-lg shadow-xl p-4"
+          >
+            <div className="text-left">
+              <h3 className="font-semibold text-lg mb-2">{member.name}</h3>
+              <p className="text-gray-600 mb-2">{member.role}</p>
+              <p className="text-gray-600 mb-2">Experience: {member.experience}</p>
+              <div className="mb-2">
+                <p className="font-medium mb-1">Specializations:</p>
+                <ul className="list-disc list-inside text-gray-600 text-sm">
+                  {member.Specialization.map((spec, index) => (
+                    <li key={index} className="mb-1">{spec}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+};

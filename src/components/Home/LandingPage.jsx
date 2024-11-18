@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import { useState } from "react";
-import { Clock, ChevronDown, Play } from "lucide-react";
+import { Clock, ChevronDown } from "lucide-react";
 import { orgData } from "../../assets/data";
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
@@ -10,8 +10,10 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function LandingPage() {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState({
     technology: false,
     laser: false,
@@ -107,6 +109,7 @@ export default function LandingPage() {
                 Dentistry with a <span className="text-[#FFB5B5]">smile.</span>
               </h1>
               <motion.button 
+                onClick={()=>navigate('/book')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="rounded-full bg-[#FFB5B5] px-6 py-3 text-white hover:bg-[#ff9b9b]"
@@ -121,11 +124,11 @@ export default function LandingPage() {
               className="md:w-1/2"
             >
               <img
-                src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small_2x/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg"
+                src={orgData.facilityImages.facility4}
                 alt="Dental Care"
                 width={500}
                 height={500}
-                className="w-full h-auto"
+                className="w-full h-auto rounded-lg"
                 loading="lazy"
               />
             </motion.div>
@@ -372,18 +375,12 @@ export default function LandingPage() {
             >
               <img
                 loading="lazy"
-                src="https://thelandmarksmile.com/wp-content/uploads/2020/06/iStock-615890680.jpg"
+                src={orgData.facilityImages.facility2}
                 alt="Dental Care"
                 width={500}
                 height={400}
                 className="w-full h-auto rounded-2xl"
               />
-              <button 
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full p-4 shadow-lg hover:scale-110 transition-transform duration-200" 
-                style={{backgroundColor: 'rgba(255, 255, 255, 0.8)'}}
-              >
-                <Play className="w-6 h-6 text-[#FFB5B5]" />
-              </button>
             </motion.div>
           </div>
         </div>

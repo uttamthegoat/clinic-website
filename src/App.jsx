@@ -3,9 +3,10 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { Suspense } from "react";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
-// import ScrollToTop from "./components/static/ScrollToTop";
+import ScrollToTop from "./utils/ScrollToTop";
 import allRoutes from "./utils/routes";
 import Loader from "./utils/loader";
+import Toaster from "./utils/Toaster";
 
 function App() {
   const location = useLocation();
@@ -13,10 +14,9 @@ function App() {
   
   return (
     <div className="App flex flex-col">
-      
         <Suspense fallback={<Loader />}>
+          <ScrollToTop />
           {!currentRoute?.hideNavbar && <Navbar />}
-          {/* <ScrollToTop /> */}
           <div className="routes-layout">
               <Routes>
                 {allRoutes.map((route) => (
@@ -31,6 +31,7 @@ function App() {
           </div>
           {!currentRoute?.hideNavbar && <Footer />}
         </Suspense>
+        <Toaster />
     </div>
   );
 }

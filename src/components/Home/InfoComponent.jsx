@@ -121,7 +121,7 @@ export default function InfoComponent() {
             className="grid grid-cols-2 gap-4"
           >
             <img
-              src="https://watermark.lovepik.com/photo/20211204/large/lovepik-female-dentist-and-dental-nurse-picture_501526139.jpg"
+              src={orgData.facilityImages.facility1}
               alt="Dental Staff 1"
               className="rounded-2xl w-full"
             />

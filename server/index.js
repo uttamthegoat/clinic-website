@@ -25,7 +25,7 @@ connectDB()
 const PORT = process.env.PORT || 5000
 
 const corsOptions = {
-  origin: 'http://localhost:5173',
+  origin: 'https://jay-smiles.netlify.app',
   // origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,

@@ -32,12 +32,12 @@ export default function Navbar() {
         className="header fixed w-full z-20"
       >
         <nav className="bg-white shadow-sm">
-          <div className="container mx-auto px-4">
-            <div className="flex justify-between items-center h-24">
+          <div className="container mx-auto px-4 max-w-7xl relative">
+            <div className="flex justify-center items-center h-24">
               {/* Mobile menu button */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="lg:hidden"
+                className="lg:hidden absolute left-4"
                 aria-label="Toggle menu"
               >
                 {isMenuOpen ? (
@@ -47,29 +47,28 @@ export default function Navbar() {
                 )}
               </button>
 
-              {/* Desktop Navigation - Left */}
-              <div className="hidden lg:flex items-center space-x-8">
-                <HashLink
-                  smooth
-                  to="/#doctors"
-                  className="text-gray-700 hover:text-gray-900"
-                >
-                  Meet Our Doctors
-                </HashLink>
-                <HashLink
-                  smooth
-                  to="/#why-choose-us"
-                  className="text-gray-700 hover:text-gray-900"
-                >
-                  Why Choose Us?
-                </HashLink>
-              </div>
+              {/* Main Navigation Container */}
+              <div className="hidden lg:flex items-center justify-center gap-x-8">
+                {/* Left Navigation */}
+                <div className="flex items-center space-x-4">
+                  <HashLink
+                    smooth
+                    to="/#doctors"
+                    className="text-gray-700 hover:text-gray-900 whitespace-nowrap text-sm"
+                  >
+                    Meet Our Doctors
+                  </HashLink>
+                  <HashLink
+                    smooth
+                    to="/#why-choose-us"
+                    className="text-gray-700 hover:text-gray-900 whitespace-nowrap text-sm"
+                  >
+                    Why Choose Us?
+                  </HashLink>
+                </div>
 
-              {/* Logo */}
-                <Link
-                  to="/"
-                  className="absolute left-1/2 transform -translate-x-1/2"
-                >
+                {/* Logo */}
+                <Link to="/">
                   <img
                     src={orgData.logo}
                     alt="Jay Smiles Logo"
@@ -77,25 +76,30 @@ export default function Navbar() {
                   />
                 </Link>
 
-              {/* Desktop Navigation - Right */}
-              <div className="hidden lg:flex items-center space-x-8">
-                <HashLink
-                  smooth
-                  to="/#common-dental-problems"
-                  className="text-gray-700 hover:text-gray-900"
-                >
-                  Common Dental Problems
-                </HashLink>
-                <HashLink
-                  smooth
-                  to="/#blogs"
-                  className="text-gray-700 hover:text-gray-900"
-                >
-                  Blogs
-                </HashLink>
+                {/* Right Navigation */}
+                <div className="flex items-center space-x-4">
+                  <HashLink
+                    smooth
+                    to="/#common-dental-problems"
+                    className="text-gray-700 hover:text-gray-900 whitespace-nowrap text-sm"
+                  >
+                    Common Dental Problems
+                  </HashLink>
+                  <HashLink
+                    smooth
+                    to="/#blogs"
+                    className="text-gray-700 hover:text-gray-900 whitespace-nowrap text-sm"
+                  >
+                    Blogs
+                  </HashLink>
+                </div>
+              </div>
+
+              {/* Book Appointment Button */}
+              <div className="hidden lg:block absolute right-4">
                 <Link
                   to="/book"
-                  className="bg-[#FFB5C0] text-white px-6 py-2 rounded-full hover:bg-[#FF9DAA] transition-colors"
+                  className="bg-[#FFB5C0] text-white px-6 py-2 rounded-full hover:bg-[#FF9DAA] transition-colors whitespace-nowrap text-sm"
                 >
                   Book an Appointment
                 </Link>

@@ -22,10 +22,10 @@ export default function InfoComponent() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-              Creating the perfect smile has never been this easy
+              We care 
             </h1>
             <p className="text-gray-600 mb-8">
-              At {orgData.name}, we prioritize your oral health with personalized, cutting-edge care.
+              At {orgData.name}, your needs come first. We take the time to listen, understand your concerns, and tailor our treatments to ensure your comfort and satisfaction. With a focus on personalized care and attention, we are dedicated to providing you with the best possible experience at every visit. Your health and well-being are our top priority
             </p>
             <Link to="/book" className="bg-white text-[#FFB5B5] border-2 border-[#FFB5B5] rounded-full px-8 py-3 hover:bg-[#FFB5B5] hover:text-white transition-colors duration-300 text-xl font-semibold">
               Book an Appointment

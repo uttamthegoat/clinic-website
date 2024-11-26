@@ -29,14 +29,14 @@ export const orgData = {
       id: 1,
       name: "Dr. JayShree",
       image: doctorImages.JayShree,
-      role: "Dental Surgeon",
+      role: "Microendodontist, Smile Makeover expert",
       Specialization: ["General Dentistry", "Cosmetic Dentistry", "Orthodontics"],
       experience: "20+ years"
     },
     {
       id: 2,
       name: "Dr. Sandesh Karanth. K",
-      image: doctorImages.SandeshKaranth,
+      image: doctorImages.RomirNavaneetham,
       role: "Orthodontist",
       Specialization: ["Comprehensive orthodontic treatment for children and adults", "Advanced clear aligner therapy", "Cerifited Invisalign provider", "Surgical orthodontics", "Cleft lip and palate Orthodontics"],
       experience: "10+ years"
@@ -44,11 +44,19 @@ export const orgData = {
     {
       id: 3,
       name: "Dr. Romir Navaneetham",
+      image: doctorImages.SandeshKaranth,
+      role: "Oral Surgeon",
+      Specialization: ["Comprehensive orthodontic treatment for children and adults", "Advanced clear aligner therapy", "Cerifited Invisalign provider", "Surgical orthodontics", "Cleft lip and palate Orthodontics"],
+      experience: "10+ years"
+    },
+    {
+      id: 4,
+      name: "Dr. Janaki Shaw",
       image: doctorImages.RomirNavaneetham,
       role: "Orthodontist",
       Specialization: ["Comprehensive orthodontic treatment for children and adults", "Advanced clear aligner therapy", "Cerifited Invisalign provider", "Surgical orthodontics", "Cleft lip and palate Orthodontics"],
-      experience: "10+ years"
-    }
+      experience: "5+ years"
+    },
 //     Dr. Sandesh Karanth. K believes in a personalized approach to treatment, taking the time to understand each patient’s needs and goals.         Dr. Karanth's focus is on creating beautiful, healthy smiles while ensuring a comfortable and positive experience.
 // Dr. Sandesh Karanth. K specializes in:
 

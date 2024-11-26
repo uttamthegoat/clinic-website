@@ -12,10 +12,6 @@ export default function Footer() {
             alt="Jay Smiles Logo"
             className="mb-4 w-[120px] md:w-[170px] h-auto"
           />
-          <h2 className="text-2xl font-bold mb-4">Jay Smiles</h2>
-          <p className="text-gray-600">
-            {orgData.description}
-          </p>
         </div>
 
         {/* Navigation Grid */}

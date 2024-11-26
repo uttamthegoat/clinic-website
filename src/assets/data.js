@@ -36,7 +36,7 @@ export const orgData = {
     {
       id: 2,
       name: "Dr. Sandesh Karanth. K",
-      image: doctorImages.RomirNavaneetham,
+      image: doctorImages.SandeshKaranth,
       role: "Orthodontist",
       Specialization: ["Comprehensive orthodontic treatment for children and adults", "Advanced clear aligner therapy", "Cerifited Invisalign provider", "Surgical orthodontics", "Cleft lip and palate Orthodontics"],
       experience: "10+ years"
@@ -44,7 +44,7 @@ export const orgData = {
     {
       id: 3,
       name: "Dr. Romir Navaneetham",
-      image: doctorImages.SandeshKaranth,
+      image: doctorImages.RomirNavaneetham,
       role: "Oral Surgeon",
       Specialization: ["Comprehensive orthodontic treatment for children and adults", "Advanced clear aligner therapy", "Cerifited Invisalign provider", "Surgical orthodontics", "Cleft lip and palate Orthodontics"],
       experience: "10+ years"
@@ -57,14 +57,18 @@ export const orgData = {
       Specialization: ["Comprehensive orthodontic treatment for children and adults", "Advanced clear aligner therapy", "Cerifited Invisalign provider", "Surgical orthodontics", "Cleft lip and palate Orthodontics"],
       experience: "5+ years"
     },
-//     Dr. Sandesh Karanth. K believes in a personalized approach to treatment, taking the time to understand each patient’s needs and goals.         Dr. Karanth's focus is on creating beautiful, healthy smiles while ensuring a comfortable and positive experience.
-// Dr. Sandesh Karanth. K specializes in:
-
-// Comprehensive orthodontic treatment for children and adults
-// Advanced clear aligner therapy 
-// Cerifited Invisalign provider
-// Surgical orthodontics 
-// Cleft lip and palate Orthodontics
+    {
+      id: 5,
+      name: "Our Team",
+      image: doctorImages.team,
+      // ... existing code ...
+      description: [
+        "Specialists who are well versed to resolve any issue you might face",
+        "Co-ordinators who help you understand the treatment curated for you scheduling appointments at your convenience",
+        "Assistants who make your needs and comfort their priority",
+        "All without any judgement"
+      ]
+    }
   ],
   services: [
     {

@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import { useState } from "react";
-import { Clock, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { orgData } from "../../assets/data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -135,14 +135,14 @@ export default function LandingPage() {
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
         >
           <source
-            src="https://player.vimeo.com/external/292927028.sd.mp4?s=02cfff1ca8ba8fb5fd4abf321a78ecda1a4b91d5&profile_id=164&oauth2_token_id=57447761"
+            src={orgData.facilityImages.header}
             type="video/mp4"
           />
           Your browser does not support the video tag.
         </video>
 
         {/* Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10" />
+        <div className="absolute top-0 left-0 w-full h-full bg-gray-500 bg-opacity-50 z-10" />
 
         {/* Content */}
         <div className="relative z-20 h-full flex items-center justify-center text-white">

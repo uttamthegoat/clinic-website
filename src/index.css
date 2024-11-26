@@ -11,7 +11,7 @@
 
 body {
   margin: 0;
-  width: 100vw;
+  /* width: 100vw; */
   width: calc(100vw - 10px);
   overflow-x: auto;
   /* user-select: none;

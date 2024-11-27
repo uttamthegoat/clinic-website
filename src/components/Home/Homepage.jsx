@@ -174,7 +174,7 @@ export default function LandingPage() {
         {/* Pink Announcement Banner */}
         <div className="w-full bg-[#FF69B4] py-2 px-4 text-white text-center">
           <p className="text-sm md:text-base font-medium">
-            Now open at Lakeside! Accepting new patients today!
+            Now open at Indira Nagar,100 feet road! Accepting new patients today!
           </p>
         </div>
 

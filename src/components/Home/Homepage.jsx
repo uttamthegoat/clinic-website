@@ -170,20 +170,23 @@ export default function LandingPage() {
   return (
     <>
       {/* Top Banner Section */}
-      <div className="w-full relative z-50 mt-[100px]">
+      <div className="w-full relative z-10 mt-[100px]">
         {/* Pink Announcement Banner */}
         <div className="w-full bg-[#FF69B4] py-2 px-4 text-white text-center">
           <p className="text-sm md:text-base font-medium">
-          Now opened at Indira Nagar, 100 feet road. Accepting new Patients!
+            Now open at Lakeside! Accepting new patients today!
           </p>
         </div>
-        
+
         {/* Dark Gray Navigation Bar */}
         <div className="w-full bg-[#4A4A4A] text-white px-4 py-3">
-          <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
             {/* Phone Number */}
             <div className="flex items-center gap-2">
-              <a href="tel:972-346-1100" className="flex items-center gap-2 hover:text-gray-200">
+              <a
+                href="tel:972-346-1100"
+                className="flex items-center gap-2 hover:text-gray-200"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -205,7 +208,7 @@ export default function LandingPage() {
             {/* Book Appointment Button */}
             <button
               onClick={() => navigate("/book")}
-              className="bg-transparent border border-white text-white px-6 py-2 rounded hover:bg-white hover:text-[#4A4A4A] transition-colors text-sm uppercase tracking-wider"
+              className="bg-transparent border border-white text-white px-6 py-2 rounded hover:bg-white hover:text-[#4A4A4A] transition-colors text-sm uppercase tracking-wider w-full md:w-auto"
             >
               Book Appointment Online
             </button>
@@ -240,7 +243,7 @@ export default function LandingPage() {
 
           {/* Content */}
           <div className="relative z-20 h-full flex items-center justify-center text-white">
-            <div className="text-center">
+            <div className="text-center px-4">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 Dentistry with a <span className="text-[#FFB5B5]">smile</span>
               </h1>
@@ -288,7 +291,9 @@ export default function LandingPage() {
                     className="w-full rounded-2xl shadow-2xl relative z-10"
                   />
                   <div className="absolute -bottom-6 right-6 bg-white py-2 px-4 rounded-lg shadow-xl z-20">
-                    <p className="text-[#FFB5B5] font-semibold">25+ Years Experience</p>
+                    <p className="text-[#FFB5B5] font-semibold">
+                      25+ Years Experience
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -307,19 +312,34 @@ export default function LandingPage() {
                   <p className="text-[#FFB5B5] font-medium text-lg">
                     Conservative Dentistry & Endodontics Specialist
                   </p>
-                  
+
                   <div className="space-y-4 text-gray-600 leading-relaxed">
                     <p>
-                      Dr. Jayshree Hegde Anil is an accomplished dentist with over 25 years of experience in the field of Conservative Dentistry and Endodontics. She has a BDS degree from the Government Dental College, Bangalore, and an MDS degree with specialization in Conservative Dentistry & Endodontics.
+                      Dr. Jayshree Hegde Anil is an accomplished dentist with
+                      over 25 years of experience in the field of Conservative
+                      Dentistry and Endodontics. She has a BDS degree from the
+                      Government Dental College, Bangalore, and an MDS degree
+                      with specialization in Conservative Dentistry &
+                      Endodontics.
                     </p>
-                    
+
                     <p>
-                      Dr. Hegde Anil Started her academic career in 1996, in the department of Conservative Dentistry and Endodontics at The Oxford Dental College, Bangalore. She was promoted to be the Head of her department in 2009. During this time, she published over 30 articles and led 48 research projects. In 2013, she transitioned to clinical practice as the Clinical Director at Ridgetop Dental International, Bangalore, before founding her own practice, Jaysmiles, in 2024.
+                      Dr. Hegde Anil Started her academic career in 1996, in the
+                      department of Conservative Dentistry and Endodontics at
+                      The Oxford Dental College, Bangalore. She was promoted to
+                      be the Head of her department in 2009. During this time,
+                      she published over 30 articles and led 48 research
+                      projects. In 2013, she transitioned to clinical practice
+                      as the Clinical Director at Ridgetop Dental International,
+                      Bangalore, before founding her own practice, Jaysmiles, in
+                      2024.
                     </p>
 
                     <div className="grid grid-cols-2 gap-4 my-6">
                       <div className="text-center p-4 bg-white rounded-lg shadow-md">
-                        <p className="text-[#FFB5B5] text-2xl font-bold">300+</p>
+                        <p className="text-[#FFB5B5] text-2xl font-bold">
+                          300+
+                        </p>
                         <p className="text-sm text-gray-600">Global Lectures</p>
                       </div>
                       <div className="text-center p-4 bg-white rounded-lg shadow-md">
@@ -329,11 +349,21 @@ export default function LandingPage() {
                     </div>
 
                     <p>
-                      Dr. Hegde Anil is a key opinion leader for two major international dental companies and has delivered over 300 lectures globally. She is the author of two textbooks on Endodontics, published in 2007 and 2020. She holds a Diplomate in Microscopic Endodontics and Restorative Dentistry and has trained many clinicians in these advanced techniques.
+                      Dr. Hegde Anil is a key opinion leader for two major
+                      international dental companies and has delivered over 300
+                      lectures globally. She is the author of two textbooks on
+                      Endodontics, published in 2007 and 2020. She holds a
+                      Diplomate in Microscopic Endodontics and Restorative
+                      Dentistry and has trained many clinicians in these
+                      advanced techniques.
                     </p>
 
                     <p>
-                      Throughout her career, Dr. Hegde Anil has gained extensive hands-on knowledge and experience across various areas of dentistry, including tooth-colored restorations, crown and bridge work, full mouth rehabilitation, and microscopic endodontics.
+                      Throughout her career, Dr. Hegde Anil has gained extensive
+                      hands-on knowledge and experience across various areas of
+                      dentistry, including tooth-colored restorations, crown and
+                      bridge work, full mouth rehabilitation, and microscopic
+                      endodontics.
                     </p>
                   </div>
                 </div>
@@ -345,8 +375,18 @@ export default function LandingPage() {
                   className="bg-[#FFB5B5] text-white px-8 py-3 rounded-full hover:bg-[#ff9b9b] transition-colors mt-8 flex items-center gap-2"
                 >
                   Book an Appointment
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </motion.button>
               </motion.div>

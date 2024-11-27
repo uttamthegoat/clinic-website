@@ -32,12 +32,12 @@ export default function Navbar() {
         className="header fixed w-full z-20"
       >
         <nav className="bg-white shadow-sm">
-          <div className="container mx-auto px-4 max-w-7xl relative">
-            <div className="flex justify-center items-center h-24">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <div className="flex justify-between items-center h-24 relative">
               {/* Mobile menu button */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="lg:hidden absolute left-4"
+                className="lg:hidden z-20"
                 aria-label="Toggle menu"
               >
                 {isMenuOpen ? (
@@ -47,10 +47,21 @@ export default function Navbar() {
                 )}
               </button>
 
-              {/* Main Navigation Container */}
-              <div className="hidden lg:flex items-center justify-center gap-x-8">
+              {/* Logo - Visible on both mobile and desktop */}
+              <div className="absolute left-1/2 transform -translate-x-1/2">
+                <Link to="/">
+                  <img
+                    src={orgData.logo}
+                    alt="Jay Smiles Logo"
+                    className="h-16 md:h-24 w-auto"
+                  />
+                </Link>
+              </div>
+
+              {/* Desktop Navigation */}
+              <div className="hidden lg:flex items-center justify-between flex-1">
                 {/* Left Navigation */}
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4 ml-4">
                   <HashLink
                     smooth
                     to="/#doctors"
@@ -67,17 +78,8 @@ export default function Navbar() {
                   </HashLink>
                 </div>
 
-                {/* Logo */}
-                <Link to="/">
-                  <img
-                    src={orgData.logo}
-                    alt="Jay Smiles Logo"
-                    className="h-16 md:h-24 w-auto"
-                  />
-                </Link>
-
                 {/* Right Navigation */}
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4 mr-4">
                   <HashLink
                     smooth
                     to="/#common-dental-problems"
@@ -92,23 +94,19 @@ export default function Navbar() {
                   >
                     Blogs
                   </HashLink>
+                  <Link
+                    to="/book"
+                    className="bg-[#FFB5C0] text-white px-6 py-2 rounded-full hover:bg-[#FF9DAA] transition-colors whitespace-nowrap text-sm"
+                  >
+                    Book an Appointment
+                  </Link>
                 </div>
-              </div>
-
-              {/* Book Appointment Button */}
-              <div className="hidden lg:block absolute right-4">
-                <Link
-                  to="/book"
-                  className="bg-[#FFB5C0] text-white px-6 py-2 rounded-full hover:bg-[#FF9DAA] transition-colors whitespace-nowrap text-sm"
-                >
-                  Book an Appointment
-                </Link>
               </div>
             </div>
 
             {/* Mobile Menu */}
             {isMenuOpen && (
-              <div className="lg:hidden py-4 space-y-4">
+              <div className="lg:hidden py-4 space-y-4 bg-white">
                 <HashLink
                   smooth
                   to="/#doctors"

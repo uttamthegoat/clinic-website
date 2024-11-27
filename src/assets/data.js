@@ -116,8 +116,9 @@ export const orgData = {
     "03:00 PM",
     "04:00 PM",
     "05:00 PM"
-  ]
-};
+  ],
+  doctorImages: doctorImages,
+}
 
 export const blogData = [
   {

@@ -169,7 +169,51 @@ export default function LandingPage() {
 
   return (
     <>
-      {/* 1st section */}
+      {/* Top Banner Section */}
+      <div className="w-full relative z-50 mt-[100px]">
+        {/* Pink Announcement Banner */}
+        <div className="w-full bg-[#FF69B4] py-2 px-4 text-white text-center">
+          <p className="text-sm md:text-base font-medium">
+          Now opened at Indira Nagar, 100 feet road. Accepting new Patients!
+          </p>
+        </div>
+        
+        {/* Dark Gray Navigation Bar */}
+        <div className="w-full bg-[#4A4A4A] text-white px-4 py-3">
+          <div className="max-w-7xl mx-auto flex justify-between items-center">
+            {/* Phone Number */}
+            <div className="flex items-center gap-2">
+              <a href="tel:972-346-1100" className="flex items-center gap-2 hover:text-gray-200">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-4 h-4"
+                >
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                972-346-1100
+              </a>
+            </div>
+
+            {/* Book Appointment Button */}
+            <button
+              onClick={() => navigate("/book")}
+              className="bg-transparent border border-white text-white px-6 py-2 rounded hover:bg-white hover:text-[#4A4A4A] transition-colors text-sm uppercase tracking-wider"
+            >
+              Book Appointment Online
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Rest of your existing code starts here */}
       <div className="bg-[#FFF5F5]">
         {/* Hero Section with Video Background */}
         <motion.section
@@ -208,6 +252,104 @@ export default function LandingPage() {
               >
                 Book an Appointment
               </motion.button>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Meet our Founder Section */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="px-4 py-16 md:py-24 bg-gradient-to-b from-white to-[#FFF5F5]"
+        >
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                Meet our <span className="text-[#FFB5B5]">Founder</span>
+              </h2>
+              <div className="w-24 h-1 bg-[#FFB5B5] mx-auto rounded-full"></div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="relative">
+                  <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-[#FFB5B5]"></div>
+                  <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-[#FFB5B5]"></div>
+                  <img
+                    src={orgData.doctorImages.JayShree}
+                    alt="Dr. Jayshree Hegde Anil"
+                    className="w-full rounded-2xl shadow-2xl relative z-10"
+                  />
+                  <div className="absolute -bottom-6 right-6 bg-white py-2 px-4 rounded-lg shadow-xl z-20">
+                    <p className="text-[#FFB5B5] font-semibold">25+ Years Experience</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="space-y-6"
+              >
+                <div className="space-y-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800">
+                    Dr. Jayshree Hegde Anil
+                  </h3>
+                  <p className="text-[#FFB5B5] font-medium text-lg">
+                    Conservative Dentistry & Endodontics Specialist
+                  </p>
+                  
+                  <div className="space-y-4 text-gray-600 leading-relaxed">
+                    <p>
+                      Dr. Jayshree Hegde Anil is an accomplished dentist with over 25 years of experience in the field of Conservative Dentistry and Endodontics. She has a BDS degree from the Government Dental College, Bangalore, and an MDS degree with specialization in Conservative Dentistry & Endodontics.
+                    </p>
+                    
+                    <p>
+                      Dr. Hegde Anil Started her academic career in 1996, in the department of Conservative Dentistry and Endodontics at The Oxford Dental College, Bangalore. She was promoted to be the Head of her department in 2009. During this time, she published over 30 articles and led 48 research projects. In 2013, she transitioned to clinical practice as the Clinical Director at Ridgetop Dental International, Bangalore, before founding her own practice, Jaysmiles, in 2024.
+                    </p>
+
+                    <div className="grid grid-cols-2 gap-4 my-6">
+                      <div className="text-center p-4 bg-white rounded-lg shadow-md">
+                        <p className="text-[#FFB5B5] text-2xl font-bold">300+</p>
+                        <p className="text-sm text-gray-600">Global Lectures</p>
+                      </div>
+                      <div className="text-center p-4 bg-white rounded-lg shadow-md">
+                        <p className="text-[#FFB5B5] text-2xl font-bold">2</p>
+                        <p className="text-sm text-gray-600">Published Books</p>
+                      </div>
+                    </div>
+
+                    <p>
+                      Dr. Hegde Anil is a key opinion leader for two major international dental companies and has delivered over 300 lectures globally. She is the author of two textbooks on Endodontics, published in 2007 and 2020. She holds a Diplomate in Microscopic Endodontics and Restorative Dentistry and has trained many clinicians in these advanced techniques.
+                    </p>
+
+                    <p>
+                      Throughout her career, Dr. Hegde Anil has gained extensive hands-on knowledge and experience across various areas of dentistry, including tooth-colored restorations, crown and bridge work, full mouth rehabilitation, and microscopic endodontics.
+                    </p>
+                  </div>
+                </div>
+
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => navigate("/book")}
+                  className="bg-[#FFB5B5] text-white px-8 py-3 rounded-full hover:bg-[#ff9b9b] transition-colors mt-8 flex items-center gap-2"
+                >
+                  Book an Appointment
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </motion.button>
+              </motion.div>
             </div>
           </div>
         </motion.section>
@@ -622,8 +764,8 @@ export default function LandingPage() {
               <p className="text-gray-600 mb-8">
                 Transform your smile with a customized Smile Makeover at our
                 dental office! Whether you&apos;re looking to brighten your
-                teeth, correct imperfections, or achieve a completely new look, we
-                offer a range of advanced treatments designed to enhance your
+                teeth, correct imperfections, or achieve a completely new look,
+                we offer a range of advanced treatments designed to enhance your
                 smile and boost your confidence. Our experienced team uses the
                 latest techniques in cosmetic dentistry, including teeth
                 whitening, veneers, crowns, and Invisalign, to create a smile
@@ -631,10 +773,10 @@ export default function LandingPage() {
                 <br />
                 We&apos;ll work closely with you to understand your goals and
                 design a personalized plan that fits your unique needs. With a
-                Smile Makeover, you can achieve the radiant, flawless smile you&apos;ve
-                always dreamed of—comfortable, affordable, and tailored just for
-                you. Let us help you put your best smile forward! Schedule your
-                consultation today.
+                Smile Makeover, you can achieve the radiant, flawless smile
+                you&apos;ve always dreamed of—comfortable, affordable, and
+                tailored just for you. Let us help you put your best smile
+                forward! Schedule your consultation today.
               </p>
               <Link
                 to="/book"

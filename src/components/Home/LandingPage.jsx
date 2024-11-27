@@ -134,10 +134,7 @@ export default function LandingPage() {
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
         >
-          <source
-            src={orgData.facilityImages.header}
-            type="video/mp4"
-          />
+          <source src={orgData.facilityImages.header} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
@@ -170,9 +167,9 @@ export default function LandingPage() {
         transition={{ duration: 0.5 }}
         className="py-16 bg-white"
       >
-        <div className="max-w-6xl mx-auto px-4">  
+        <div className="max-w-6xl mx-auto px-4">
           {/* Stats Grid */}
-<div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
             <motion.div whileHover={{ scale: 1.05 }} className="text-center">
               <h3 className="text-3xl font-bold text-[#FFB5B5] mb-2">600+</h3>
               <p className="text-gray-600">Patients Served</p>
@@ -282,7 +279,7 @@ export default function LandingPage() {
                             </li>
                           ))}
                         </ul>
-                                  <motion.a
+                        <motion.a
                           href="#"
                           whileHover={{ scale: 1.05 }}
                           className="text-[#FFB5B5] hover:underline absolute bottom-6 left-6"
@@ -472,6 +469,80 @@ export default function LandingPage() {
                 height={400}
                 className="w-full h-auto rounded-2xl"
               />
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Doctor Profile Section */}
+      <motion.section
+        ref={heroRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.5 }}
+        className="px-4 py-16 md:py-24 bg-white"
+        id="doctors"
+      >
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            {/* Image Column */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="lg:w-1/3"
+            >
+              <div className="relative">
+                <img
+                  src={orgData.doctorImages.jayShree}
+                  alt="Dr. Jayshree Hegde Anil"
+                  className="rounded-2xl shadow-lg w-full h-auto"
+                />
+                <div className="absolute -bottom-4 -right-4 bg-[#FFB5B5] rounded-lg p-4 shadow-lg">
+                  <p className="text-white font-semibold">25+ Years Experience</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Content Column */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="lg:w-2/3"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Meet <span className="text-[#FFB5B5]">Dr. Jayshree Hegde Anil</span>
+              </h2>
+              
+              <div className="space-y-4 text-gray-600">
+                <p>
+                  Dr. Jayshree Hegde Anil is an accomplished dentist with over 25 years of experience in Conservative Dentistry and Endodontics. She holds a BDS degree from the Government Dental College, Bangalore, and an MDS degree specializing in Conservative Dentistry & Endodontics.
+                </p>
+                
+                <p>
+                  Starting her academic career in 1996 at The Oxford Dental College, Bangalore, she rose to become the Head of Conservative Dentistry and Endodontics in 2009. Her impressive portfolio includes over 30 published articles and leadership of 48 research projects. In 2013, she transitioned to clinical practice as Clinical Director at Ridgetop Dental International, before establishing Jaysmiles in 2024.
+                </p>
+
+                <p>
+                  As a key opinion leader for major international dental companies, she has delivered over 300 lectures globally and authored two textbooks on Endodontics. Her expertise in microscopic endodontics and restorative dentistry is recognized through her Diplomate status and her role in training numerous clinicians.
+                </p>
+
+                <div className="border-l-4 border-[#FFB5B5] pl-4 mt-6">
+                  <p className="italic">
+                    "Throughout my career, I've remained passionate about providing the highest level of care in tooth-colored restorations, crown and bridge work, full mouth rehabilitation, and microscopic endodontics."
+                  </p>
+                </div>
+              </div>
+
+              <motion.button
+                onClick={() => navigate("/book")}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="mt-8 rounded-full bg-[#FFB5B5] px-8 py-3 text-white hover:bg-[#ff9b9b] transition-colors"
+              >
+                Book an Appointment
+              </motion.button>
             </motion.div>
           </div>
         </div>

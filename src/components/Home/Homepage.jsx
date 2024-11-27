@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "./InfoComponent.css";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -247,8 +248,8 @@ export default function LandingPage() {
           </div>
         </motion.section>
 
-         {/* Team Section */}
-         <div>
+        {/* Team Section */}
+        <div>
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -454,9 +455,13 @@ export default function LandingPage() {
                       onClick={() => toggleAccordion("technology")}
                       className="flex justify-between items-center w-full text-left"
                     >
-                      <span className="text-lg font-semibold">
-                        Professional Expertise
-                      </span>
+                      <p className="text-gray-600">
+                        <span className="text-lg font-semibold block">
+                          Advanced Technology
+                        </span>
+                        Using cutting edge dental technology for optimal
+                        results.
+                      </p>
                       <motion.div
                         animate={{ rotate: isOpen.technology ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
@@ -473,12 +478,14 @@ export default function LandingPage() {
                           transition={{ duration: 0.3 }}
                         >
                           <p className="text-gray-600 mt-2">
-                            Your care is our priority, which is why all
-                            treatments are exclusively handled by highly
-                            qualified MDS specialists. With their advanced
-                            expertise, you can trust that you’re receiving the
-                            highest standard of professional dental care. Your
-                            smile deserves nothing less than the best!
+                            Our dental practice utilizes advanced technology to
+                            provide the highest level of care. From digital
+                            X-rays and 3D imaging to laser treatments and
+                            same-day crowns, we use the latest tools to enhance
+                            accuracy, reduce discomfort, and speed up your
+                            treatment. With these innovations, we ensure more
+                            precise diagnoses, faster recovery times, and a more
+                            comfortable experience for every patient.
                           </p>
                         </motion.div>
                       )}
@@ -491,9 +498,13 @@ export default function LandingPage() {
                       onClick={() => toggleAccordion("laser")}
                       className="flex justify-between items-center w-full text-left"
                     >
-                      <span className="text-lg font-semibold">
-                        Advanced Technology
-                      </span>
+                      <p className="text-gray-600">
+                        <span className="text-lg font-semibold block">
+                          Laser Dentistry
+                        </span>
+                        Precise and comfortable treatment using laser
+                        technology.
+                      </p>
                       <motion.div
                         animate={{ rotate: isOpen.laser ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
@@ -510,14 +521,21 @@ export default function LandingPage() {
                           transition={{ duration: 0.3 }}
                         >
                           <p className="text-gray-600 mt-2">
-                            Our clinic is outfitted with cutting-edge dental
-                            technology to ensure precise and efficient
-                            treatments. With the support of cutting-edge dental
-                            technology, we deliver precise, effective, and
-                            comfortable treatments. We stay at the forefront of
-                            advancements in dental care to provide the highest
-                            level of comfort and results.
+                            We use state-of-the-art dental lasers to perform
+                            your procedures and provide you with higher-quality
+                            care. Our lasers help us ensure that your care is
+                            faster and more comfortable as well as less
+                            invasive. Lasers also help speed up the healing
+                            process in restorative procedures such as root
+                            canals so that you can return to your regular
+                            activities sooner.
                           </p>
+                          <ul className="list-disc list-inside text-gray-600 ps-2">
+                            <li>Crown Lengthening</li>
+                            <li>Frenectomy</li>
+                            <li>LANAP® Laser Gum Treatment</li>
+                            <li>NightLase®, SnoreLase & Smoothlase™</li>
+                          </ul>
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -529,9 +547,12 @@ export default function LandingPage() {
                       onClick={() => toggleAccordion("care")}
                       className="flex justify-between items-center w-full text-left"
                     >
-                      <span className="text-lg font-semibold">
-                        Comprehensive Care
-                      </span>
+                      <p className="text-gray-600">
+                        <span className="text-lg font-semibold block">
+                          Comprehensive Care
+                        </span>
+                        Complete dental care under one roof.
+                      </p>
                       <motion.div
                         animate={{ rotate: isOpen.care ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
@@ -548,11 +569,16 @@ export default function LandingPage() {
                           transition={{ duration: 0.3 }}
                         >
                           <p className="text-gray-600 mt-2">
-                            Each treatment plan is tailored to meet your unique
-                            needs, ensuring personalized care and optimal
-                            outcomes. Our commitment to excellence ensures you
-                            receive the best care at every step of your dental
-                            journey.
+                            At our dental office, we provide complete dental
+                            care under one roof. Prioritizing kindness,
+                            compassion, and your well-being, we provide
+                            personalized care in a comfortable, stress-free
+                            environment and only recommend treatments that are
+                            essential for your dental health. Our goal is to
+                            build trust and ensure you receive the right care,
+                            with no unnecessary procedures or upselling—just
+                            honest, high-quality dentistry tailored to your
+                            needs.
                           </p>
                         </motion.div>
                       )}
@@ -594,12 +620,21 @@ export default function LandingPage() {
                 We care
               </h1>
               <p className="text-gray-600 mb-8">
-                At {orgData.name}, your needs come first. We take the time to
-                listen, understand your concerns, and tailor our treatments to
-                ensure your comfort and satisfaction. With a focus on
-                personalized care and attention, we are dedicated to providing
-                you with the best possible experience at every visit. Your
-                health and well-being are our top priority
+                Transform your smile with a customized Smile Makeover at our
+                dental office! Whether you&apos;re looking to brighten your
+                teeth, correct imperfections, or achieve a completely new look, we
+                offer a range of advanced treatments designed to enhance your
+                smile and boost your confidence. Our experienced team uses the
+                latest techniques in cosmetic dentistry, including teeth
+                whitening, veneers, crowns, and Invisalign, to create a smile
+                that&apos;s both beautiful and natural.
+                <br />
+                We&apos;ll work closely with you to understand your goals and
+                design a personalized plan that fits your unique needs. With a
+                Smile Makeover, you can achieve the radiant, flawless smile you&apos;ve
+                always dreamed of—comfortable, affordable, and tailored just for
+                you. Let us help you put your best smile forward! Schedule your
+                consultation today.
               </p>
               <Link
                 to="/book"
@@ -835,7 +870,6 @@ export default function LandingPage() {
       </div>
       {/* 3rd section */}
       <div className="min-h-screen bg-[#ffffff]">
-
         {/* Testimonials Section */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
@@ -1124,9 +1158,7 @@ const ImageWithDynamicClass = ({ src, alt }) => {
       alt={alt}
       onLoad={handleLoad}
       className={
-        isWider
-          ? "w-full h-auto"
-          : "h-full w-auto block mx-auto rounded-lg"
+        isWider ? "w-full h-auto" : "h-full w-auto block mx-auto rounded-lg"
       }
     />
   );
@@ -1142,7 +1174,11 @@ const TeamCard = ({ member }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="h-[500px] md:h-[550px]  rounded-lg">
-        <img src={member.image} alt={member.name} className="h-full w-auto block mx-auto"/>
+        <img
+          src={member.image}
+          alt={member.name}
+          className="h-full w-auto block mx-auto"
+        />
       </div>
       <p className="font-medium mt-3">{member.name}</p>
 

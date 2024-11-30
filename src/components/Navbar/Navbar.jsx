@@ -47,8 +47,8 @@ export default function Navbar() {
                 )}
               </button>
 
-              {/* Logo - Visible on both mobile and desktop */}
-              <div className="absolute left-1/2 transform -translate-x-1/2">
+              {/* Logo - Left aligned */}
+              <div className="flex items-center">
                 <Link to="/">
                   <img
                     src={orgData.logo}
@@ -59,48 +59,47 @@ export default function Navbar() {
               </div>
 
               {/* Desktop Navigation */}
-              <div className="hidden lg:flex items-center justify-between flex-1">
-                {/* Left Navigation */}
-                <div className="flex items-center space-x-4 ml-4">
-                  <HashLink
-                    smooth
-                    to="/#doctors"
-                    className="text-gray-700 hover:text-gray-900 whitespace-nowrap text-sm"
-                  >
-                    Meet Our Doctors
-                  </HashLink>
-                  <HashLink
-                    smooth
-                    to="/#why-choose-us"
-                    className="text-gray-700 hover:text-gray-900 whitespace-nowrap text-sm"
-                  >
-                    Why Choose Us?
-                  </HashLink>
-                </div>
-
-                {/* Right Navigation */}
-                <div className="flex items-center space-x-4 mr-4">
-                  <HashLink
-                    smooth
-                    to="/#common-dental-problems"
-                    className="text-gray-700 hover:text-gray-900 whitespace-nowrap text-sm"
-                  >
-                    Common Dental Problems
-                  </HashLink>
-                  <HashLink
-                    smooth
-                    to="/#blogs"
-                    className="text-gray-700 hover:text-gray-900 whitespace-nowrap text-sm"
-                  >
-                    Blogs
-                  </HashLink>
-                  <Link
-                    to="/book"
-                    className="bg-[#FFB5C0] text-white px-6 py-2 rounded-full hover:bg-[#FF9DAA] transition-colors whitespace-nowrap text-sm"
-                  >
-                    Book an Appointment
-                  </Link>
-                </div>
+              <div className="hidden lg:flex items-center justify-end space-x-6 flex-1 ml-8">
+                <HashLink
+                  smooth
+                  to="/#doctors"
+                  className="text-gray-700 hover:text-gray-900 whitespace-nowrap text-sm"
+                >
+                  Meet Our Doctors
+                </HashLink>
+                <HashLink
+                  smooth
+                  to="/#why-choose-us"
+                  className="text-gray-700 hover:text-gray-900 whitespace-nowrap text-sm"
+                >
+                  Why Choose Us?
+                </HashLink>
+                <Link
+                  to="/about"
+                  className="text-gray-700 hover:text-gray-900 whitespace-nowrap text-sm"
+                >
+                  About Us
+                </Link>
+                <HashLink
+                  smooth
+                  to="/#common-dental-problems"
+                  className="text-gray-700 hover:text-gray-900 whitespace-nowrap text-sm"
+                >
+                  Common Dental Problems
+                </HashLink>
+                <HashLink
+                  smooth
+                  to="/#blogs"
+                  className="text-gray-700 hover:text-gray-900 whitespace-nowrap text-sm"
+                >
+                  Blogs
+                </HashLink>
+                <Link
+                  to="/book"
+                  className="bg-[#FFB5C0] text-white px-6 py-2 rounded-full hover:bg-[#FF9DAA] transition-colors whitespace-nowrap text-sm"
+                >
+                  Book an Appointment
+                </Link>
               </div>
             </div>
 
@@ -123,6 +122,13 @@ export default function Navbar() {
                 >
                   Why Choose Us?
                 </HashLink>
+                <Link
+                  to="/about"
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About Us
+                </Link>
                 <HashLink
                   smooth
                   to="/#common-dental-problems"

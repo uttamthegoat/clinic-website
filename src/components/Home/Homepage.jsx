@@ -172,20 +172,20 @@ export default function LandingPage() {
       {/* Top Banner Section */}
       <div className="w-full relative z-10 mt-[100px]">
         {/* Pink Announcement Banner */}
-        <div className="w-full bg-[#FF69B4] py-2 px-4 text-white text-center">
+        <div className="w-full bg-[#FFB5B5] py-2 px-4 text-white text-center">
           <p className="text-sm md:text-base font-medium">
             Now open at Indira Nagar,100 feet road! Accepting new patients today!
           </p>
         </div>
 
-        {/* Dark Gray Navigation Bar */}
-        <div className="w-full bg-[#4A4A4A] text-white px-4 py-3">
+        {/* Light Pink Navigation Bar - Changed from Dark Gray */}
+        <div className="w-full bg-[#FFF5F5] text-[#4A4A4A] px-4 py-3 shadow-sm">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
             {/* Phone Number */}
             <div className="flex items-center gap-2">
               <a
-                href="tel:972-346-1100"
-                className="flex items-center gap-2 hover:text-gray-200"
+                href="tel:+918147962712"
+                className="flex items-center gap-2 hover:text-[#FFB5B5]"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -201,14 +201,14 @@ export default function LandingPage() {
                 >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
-                972-346-1100
+                +91 8147962712
               </a>
             </div>
 
             {/* Book Appointment Button */}
             <button
               onClick={() => navigate("/book")}
-              className="bg-transparent border border-white text-white px-6 py-2 rounded hover:bg-white hover:text-[#4A4A4A] transition-colors text-sm uppercase tracking-wider w-full md:w-auto"
+              className="bg-[#FFB5B5] text-white px-6 py-2 rounded-full hover:bg-[#ff9b9b] transition-colors text-sm uppercase tracking-wider w-full md:w-auto"
             >
               Book Appointment Online
             </button>
@@ -833,7 +833,7 @@ export default function LandingPage() {
             >
               <img
                 loading="lazy"
-                src="https://www.shutterstock.com/image-photo/happy-black-man-checks-cell-600nw-2225948601.jpg"
+                src="/src/assets/images/facility/IMG_2436.jpg"
                 alt="Dental Care"
                 className="rounded-full w-full max-w-md mx-auto"
               />
@@ -924,14 +924,14 @@ export default function LandingPage() {
               className="grid grid-cols-2 gap-4"
             >
               <img
-                src={orgData.facilityImages.facility1}
-                alt="Dental Staff 1"
-                className="rounded-2xl w-full"
+                src="/src/assets/images/facility/IMG_2441.jpg"
+                alt="Dental Facility 1"
+                className="rounded-2xl w-full h-[300px] object-cover"
               />
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbq1LRx2Q9367z14M4pAlDVpdghQJ2TAV6IQ&s"
-                alt="Dental Staff 2"
-                className="rounded-2xl w-full mt-8"
+                src="/src/assets/images/facility/IMG_2452.jpg"
+                alt="Dental Facility 2"
+                className="rounded-2xl w-full h-[300px] object-cover mt-8"
               />
               <div className="absolute bottom-0 right-0 bg-white rounded-full p-4">
                 <span className="text-2xl font-bold">10+</span>

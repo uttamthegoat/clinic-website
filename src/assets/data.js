@@ -12,8 +12,8 @@ export const orgData = {
   description:
     "Jay Smiles is a one stop Dental centre for all your dental needs. It is crafted to render fine dentistry by specialists in all fields. The experienced staff here are trained to ensure you feel comfortable and relaxed. The services we render range from microscopic root canal treatments, tooth colored fillings, crowns and bridges, invisalign, orthodontic treatment, implants, gum therapy, geriatric and pediatric care. With advanced technology incorporated through state of the art equipments, we are able to render fine dentistry .",
   logo: org_Logo,
-  email: "info@cliniccenter.com",
-  phone: "(123) 456-7890",
+  email: "info@jaysmiles.in",
+  phone: "+91 8147962712",
   address: " 2011, 2nd Floor, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka - 560038, Above Mahesh Lunch Home",
   city: "Bengaluru",
   state: "Karnataka",
@@ -125,28 +125,28 @@ export const blogData = [
     id: 1,
     title: "The Importance of Regular Dental Check-ups",
     date: "November 8, 2024",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbq1LRx2Q9367z14M4pAlDVpdghQJ2TAV6IQ&s",
+    image: "/src/assets/images/facility/IMG_2472.jpg",
     link: "#dummy"
   },
   {
     id: 2,
     title: "The Importance of Regular Dental Check-ups",
     date: "November 8, 2024",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbq1LRx2Q9367z14M4pAlDVpdghQJ2TAV6IQ&s",
+    image: "/src/assets/images/facility/IMG_2482.jpg",
     link: "#dummy"
   },
   {
     id: 3,
     title: "The Importance of Regular Dental Check-ups",
     date: "November 8, 2024",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbq1LRx2Q9367z14M4pAlDVpdghQJ2TAV6IQ&s",
+    image: "/src/assets/images/facility/IMG_2483.jpg",
     link: "#dummy"
   },
   {
     id: 4,
     title: "The Importance of Regular Dental Check-ups",
     date: "November 8, 2024",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbq1LRx2Q9367z14M4pAlDVpdghQJ2TAV6IQ&s",
+    image: "/src/assets/images/facility/IMG_2492.jpg",
     link: "#dummy"
   }
 ]
